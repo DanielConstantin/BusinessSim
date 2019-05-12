@@ -176,6 +176,9 @@ public class Scene2Controller implements Initializable {
         Optional<ButtonType> option = dialogAlert.showAndWait();
          if (option.get() == null) {
          } else if (option.get() == ButtonType.APPLY) {
+         if(ActionHandling.applyAction(actionNo)==true){
+             lblNewP.setDisable(true);
+         }
          //do stuff
          dialogAlert.close();
          } else if (option.get() == ButtonType.CANCEL) {
