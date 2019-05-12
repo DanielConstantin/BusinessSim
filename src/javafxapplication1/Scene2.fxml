@@ -7,49 +7,74 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonType?>
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" opacity="0.49" prefHeight="544.0" prefWidth="509.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene2Controller">
+<AnchorPane id="AnchorPane" opacity="0.49" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #5ad602; -fx-border-style: dashed;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene2Controller">
     <children>
-      <Label fx:id="lblWeek" accessibleRole="TEXT_FIELD" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="247.0" layoutY="190.0" prefHeight="64.0" prefWidth="82.0" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+      <Label id="lblnam" fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="291.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" text="You have" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblWeek" accessibleRole="TEXT_FIELD" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="313.0" layoutY="205.0" prefHeight="57.0" prefWidth="70.0" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Rockwell Bold" size="25.0" />
          </font>
       </Label>
-      <ProgressBar fx:id="pbCredibility" cache="true" layoutX="341.0" layoutY="75.0" prefHeight="20.0" prefWidth="137.0" progress="0.5" AnchorPane.topAnchor="75.0">
+      <ProgressBar fx:id="pbCredibility" cache="true" layoutX="315.0" layoutY="92.0" prefHeight="20.0" prefWidth="137.0" progress="0.5" AnchorPane.topAnchor="92.0">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
       </ProgressBar>
-      <Label fx:id="lblCredibility" layoutX="269.0" layoutY="72.0" prefHeight="26.0" prefWidth="64.0" text="Credibility:" textAlignment="RIGHT" wrapText="true" />
-      <ProgressBar fx:id="pbFinance" cache="true" layoutX="341.0" layoutY="101.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
+      <Label fx:id="lblCredibility" layoutX="246.0" layoutY="89.0" prefHeight="26.0" prefWidth="61.0" text="Credibility:" textAlignment="RIGHT" wrapText="true" />
+      <ProgressBar fx:id="pbFinance" cache="true" layoutX="315.0" layoutY="118.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
       </ProgressBar>
-      <Label fx:id="lblFinance" layoutX="281.0" layoutY="98.0" prefHeight="26.0" prefWidth="55.0" text="Finance:" textAlignment="RIGHT" wrapText="true" />
-      <Button fx:id="btnNextWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="342.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#OnMouseClicked" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #5aa51c; -fx-background-radius: 80  80 80;" text="Next week" textFill="#0b0b0b">
+      <Label fx:id="lblFinance" layoutX="262.0" layoutY="115.0" prefHeight="26.0" prefWidth="48.0" text="Finance:" textAlignment="RIGHT" wrapText="true" />
+      <Button fx:id="btnNextWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="278.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#OnMouseClicked" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #912011; -fx-background-radius: 80  80 80;" text="Next week">
          <font>
-            <Font name="Nirmala UI Semilight" size="18.0" />
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#f5fff2" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Button>
-      <Label id="lblnam" fx:id="lblnam" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="336.0" layoutY="47.0" prefHeight="25.0" prefWidth="146.0" text="Company Name" textAlignment="CENTER" textFill="#04697b" textOverrun="CENTER_ELLIPSIS">
+      <Label id="Company Name" fx:id="lblnam" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="255.0" layoutY="56.0" prefHeight="28.0" prefWidth="202.0" text="Company Name" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
          </font>
+         <textFill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.030158708965967618" endY="0.9365079380217053">
+               <stops>
+                  <Stop color="#ef2c2c" />
+                  <Stop color="BLACK" offset="0.012771392081736891" />
+                  <Stop color="#b2381b" offset="0.8904030230016708" />
+                  <Stop color="#97a15d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
-      <ProgressBar fx:id="pbMotivation" cache="true" layoutX="341.0" layoutY="127.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
+      <ProgressBar fx:id="pbMotivation" cache="true" layoutX="315.0" layoutY="144.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
       </ProgressBar>
-      <BarChart layoutX="29.0" layoutY="347.0" prefHeight="167.0" prefWidth="451.0" title="Financial Evolution">
+      <BarChart fx:id="chartFinancial" barGap="2.0" categoryGap="1.0" layoutX="14.0" layoutY="354.0" prefHeight="244.0" prefWidth="457.0" title="Financial Evolution">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -57,123 +82,127 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Label fx:id="lblMotivation" layoutX="263.0" layoutY="124.0" prefHeight="26.0" prefWidth="73.0" text="Motivation:" textAlignment="RIGHT" wrapText="true" />
-      <Label fx:id="lblCredibility1" layoutX="363.0" layoutY="21.0" prefHeight="26.0" prefWidth="47.0" text="Founds:" textAlignment="RIGHT" wrapText="true" />
-      <Label fx:id="lblCredibility11" layoutX="416.0" layoutY="21.0" prefHeight="26.0" prefWidth="55.0" text="50000" textAlignment="RIGHT" wrapText="true" />
-      <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="171.0" layoutY="9.0" prefHeight="25.0" prefWidth="171.0" text="Business Simulator" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="lblMotivation" layoutX="246.0" layoutY="141.0" prefHeight="26.0" prefWidth="64.0" text="Motivation:" textAlignment="RIGHT" wrapText="true" />
+      <Label fx:id="lblCredibility1" layoutX="363.0" layoutY="23.0" prefHeight="26.0" prefWidth="47.0" text="Founds:" textAlignment="RIGHT" wrapText="true">
          <font>
-            <Font name="Century" size="18.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="315.0" prefWidth="248.0">
-         <children>
-            <Accordion fx:id="accMenu" layoutX="27.0" layoutY="50.0" prefHeight="258.0" prefWidth="202.0" style="-fx-border-style: NONE; -fx-border-width: 0;">
-              <panes>
-                <TitledPane fx:id="acctpRD" alignment="CENTER" animated="false" prefHeight="174.0" prefWidth="166.0" style="-fx-background-color: WHITE; -fx-background-color: transparent;" text="R&amp;D" textAlignment="CENTER">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: WHITE;">
-                           <children>
-                              <Label fx:id="lblNewP" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="7.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40; -fx-border-color: null;" text="New Product Dev" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblImproveP" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="49.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40;" text="Improve Products" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblCostR" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="90.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40;" text="Cost Reduction" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                </TitledPane>
-                <TitledPane fx:id="acctpEmployees" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="175.0" prefWidth="202.0" style="-fx-background-color: #afaf00;" text="Employees">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="154.0" prefWidth="200.0" style="-fx-background-color: WHITE;">
-                           <children>
-                              <Label fx:id="lblTeamB" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" layoutY="8.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Teambuilding">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblFires" alignment="CENTER" layoutY="49.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Fire">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblBonus" alignment="CENTER" layoutY="91.0" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Bonuses">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblTrainning" alignment="CENTER" layoutY="135.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Trainning">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                </TitledPane>
-                <TitledPane fx:id="acctpMarketing" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="221.0" prefWidth="202.0" style="-fx-background-color: #5171db;" text="Marketing">
-                  <content>
-                    <AnchorPane maxHeight="200.0" minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="200.0" style="-fx-background-color: WHITE;">
-                           <children>
-                              <Label fx:id="lblTVSpot" alignment="CENTER" layoutX="-1.0" layoutY="9.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="TV Spot" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblMInsert" alignment="CENTER" layoutX="-1.0" layoutY="48.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Magazine Insert" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblDiscount" alignment="CENTER" layoutX="-1.0" layoutY="136.0" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Discount" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblChangeD" alignment="CENTER" layoutX="-1.0" layoutY="91.0" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Change Design" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                </TitledPane>
-              </panes>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Accordion fx:id="accMenu" layoutX="22.0" layoutY="85.0" prefHeight="256.0" prefWidth="213.0" style="-fx-border-style: NONE; -fx-border-width: 0;">
+        <panes>
+          <TitledPane fx:id="acctpEmployees" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="167.0" prefWidth="202.0" text="Employees">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="154.0" prefWidth="200.0" style="-fx-background-color: #5ad602;">
+                     <children>
+                        <Label fx:id="lblTeamB" accessibleRole="BUTTON" alignment="CENTER" contentDisplay="CENTER" layoutY="8.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Teambuilding">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblFires" alignment="CENTER" layoutY="49.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Fire">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblBonus" alignment="CENTER" layoutY="91.0" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Bonuses">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTrainning" alignment="CENTER" layoutY="135.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #bc670d; -fx-background-radius: 40;" text="Trainning">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
                <cursor>
-                  <Cursor fx:constant="NONE" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
-            </Accordion>
-         </children>
-      </AnchorPane>
-      <DialogPane fx:id="dialogAccept" contentText="Nimic de adaugat" layoutX="63.0" layoutY="190.0" prefHeight="130.0" prefWidth="360.0" visible="false">
-         <buttonTypes>
-            <ButtonType fx:constant="APPLY" />
-            <ButtonType fx:constant="CANCEL" />
-         </buttonTypes>
-      </DialogPane>
-      <Label id="lblnam" fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="234.0" layoutY="166.0" prefHeight="25.0" prefWidth="109.0" text="You have" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+          </TitledPane>
+          <TitledPane fx:id="acctpRD" alignment="CENTER" animated="false" prefHeight="174.0" prefWidth="166.0" style="-fx-border-color: #5ad602;" text="R&amp;D" textAlignment="CENTER">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #5ad602;">
+                     <children>
+                        <Label fx:id="lblNewP" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="7.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40; -fx-border-color: null;" text="New Product Dev" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblImproveP" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="49.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40;" text="Improve Products" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblCostR" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="90.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #670591; -fx-background-radius: 40;" text="Cost Reduction" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+          </TitledPane>
+          <TitledPane fx:id="acctpMarketing" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="210.0" prefWidth="170.0" text="Marketing">
+            <content>
+              <AnchorPane maxHeight="200.0" minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="200.0" style="-fx-background-color: #5ad602; -fx-border-color: #5ad602;">
+                     <children>
+                        <Label fx:id="lblTVSpot" alignment="CENTER" layoutX="-1.0" layoutY="9.0" onMouseClicked="#OnMouseClicked" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="TV Spot" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMInsert" alignment="CENTER" layoutX="-1.0" layoutY="48.0" onMouseClicked="#OnMouseClicked" prefHeight="34.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Magazine Insert" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDiscount" alignment="CENTER" layoutX="-1.0" layoutY="136.0" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Discount" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblChangeD" alignment="CENTER" layoutX="-1.0" layoutY="91.0" onMouseClicked="#OnMouseClicked" prefHeight="32.0" prefWidth="202.0" style="-fx-background-color: #4baa84; -fx-background-radius: 40;" text="Change Design" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+          </TitledPane>
+        </panes>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </Accordion>
+      <Label fx:id="lblFounds" layoutX="410.0" layoutY="23.0" prefHeight="26.0" prefWidth="54.0" textAlignment="RIGHT" wrapText="true">
          <font>
-            <Font name="Century" size="18.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="149.0" layoutY="14.0" prefHeight="38.0" prefWidth="213.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#ff0909" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
       </Label>
+      <DialogPane fx:id="dialogAccept" blendMode="SRC_ATOP" contentText="Nimic de adaugat" headerText="Acesta este un header" layoutX="111.0" layoutY="274.0" prefHeight="135.0" prefWidth="360.0" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DialogPane>
     </children>
 </AnchorPane>

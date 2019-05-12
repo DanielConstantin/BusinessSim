@@ -12,33 +12,57 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" opacity="0.49" prefHeight="331.0" prefWidth="513.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene1Controller">
+<AnchorPane id="AnchorPane" opacity="0.49" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #5ad602;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene1Controller">
     <children>
-        <Button id="btnclickme" fx:id="button" layoutX="139.0" layoutY="206.0" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: BLACK; -fx-background-radius: 80 0 0 80;" text="Create Company" textAlignment="CENTER">
+        <Button id="btnclickme" fx:id="button" layoutX="139.0" layoutY="378.0" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: BLACK; -fx-background-radius: 80 0 0 80;" text="Create Company" textAlignment="CENTER" textFill="WHITE">
          <opaqueInsets>
             <Insets left="10.0" right="30.0" />
-         </opaqueInsets></Button>
-      <Label layoutX="14.0" layoutY="89.0" text="Company Name:" />
-      <TextField fx:id="txtnume" alignment="TOP_LEFT" layoutX="128.0" layoutY="84.0" onKeyPressed="#WhenYouWrite" prefHeight="26.0" prefWidth="182.0" promptText="insert company name">
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="34.0" layoutY="190.0" text="Company Name:">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+         </font></Label>
+      <TextField fx:id="txtnume" alignment="TOP_LEFT" layoutX="128.0" layoutY="183.0" onKeyPressed="#WhenYouWrite" prefHeight="26.0" prefWidth="182.0" promptText="insert company name" style="-fx-border-color: red; -fx-background-color: #5ad60;">
          <cursor>
             <Cursor fx:constant="TEXT" />
-         </cursor></TextField>
-      <TextField fx:id="txtPersName" accessibleText="Insert your name" layoutX="128.0" layoutY="119.0" onKeyPressed="#WhenYouWrite" prefHeight="26.0" prefWidth="182.0" />
-      <Label layoutX="43.0" layoutY="120.0" prefHeight="26.0" prefWidth="85.0" text="Your name:" />
-      <Button fx:id="btnLogo" disable="true" layoutX="345.0" layoutY="82.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="Make a logo" />
-      <RadioButton fx:id="rbMale" layoutX="233.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#handleRadioButtonSel" prefHeight="18.0" prefWidth="102.0" text="Male">
+         </cursor>
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="txtPersName" accessibleText="Insert your name" layoutX="128.0" layoutY="228.0" onKeyPressed="#WhenYouWrite" prefHeight="26.0" prefWidth="182.0" promptText="insert user name" style="-fx-border-color: red; -fx-background-color: ;">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+         </font></TextField>
+      <Label layoutX="54.0" layoutY="228.0" prefHeight="26.0" prefWidth="69.0" text="Your name:">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnLogo" disable="true" layoutX="325.0" layoutY="320.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="Make a logo" />
+      <RadioButton fx:id="rbMale" layoutX="240.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#handleRadioButtonSel" prefHeight="18.0" prefWidth="89.0" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="genderGroup" />
          </toggleGroup>
+         <font>
+            <Font name="Gill Sans MT Condensed" size="12.0" />
+         </font>
       </RadioButton>
-      <RadioButton fx:id="rbFemale" layoutX="139.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#handleRadioButtonSel" selected="true" text="Female" toggleGroup="$genderGroup" />
-      <Label fx:id="lblAdv" alignment="CENTER" layoutX="103.0" layoutY="260.0" prefHeight="32.0" prefWidth="232.0" textFill="#ff2222" />
-      <Label fx:id="lblTitlu" layoutX="85.0" layoutY="22.0" prefHeight="46.0" prefWidth="344.0" text="BUISNESS SIMULATOR" textFill="#a40505">
+      <RadioButton fx:id="rbFemale" layoutX="139.0" layoutY="295.0" mnemonicParsing="false" onMouseClicked="#handleRadioButtonSel" prefHeight="27.0" prefWidth="69.0" selected="true" text="Female" toggleGroup="$genderGroup">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="12.0" />
+         </font></RadioButton>
+      <Label fx:id="lblAdv" alignment="CENTER" layoutX="58.0" layoutY="443.0" prefHeight="32.0" prefWidth="350.0" textFill="#ff2222">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="12.0" />
+         </font></Label>
+      <Label fx:id="lblTitlu" layoutX="86.0" layoutY="67.0" prefHeight="46.0" prefWidth="312.0" text="BUISNESS SIMULATOR" textFill="#a40505">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgcaracter" fitHeight="153.0" fitWidth="122.0" layoutX="345.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgcaracter" fitHeight="153.0" fitWidth="122.0" layoutX="325.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/IMG-20190427-WA0042.jpg" />
          </image>
