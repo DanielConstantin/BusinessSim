@@ -23,13 +23,16 @@ actionList.add(pa1);
 actionList.add(pa2);
 }
 
-static public void applyAction(int actionno){
-    if(!actionList.get(actionno).isMultiple()){
-   //  List<PlyActions> col= CurrentPlayer.PlyactionList.stream()
- //              .map(PlyActions::Nrcrt)
-           //    .collect(i -> i.getNcrt()==actionno);
-
-    }
+static public boolean applyAction(int actionno){
+ if(CurrentPlayer.ply.getFinance()>=actionList.get(actionno).getCost()){
+     CurrentPlayer.PlyactionList.add(actionList.get(actionno));
+     CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).setIsActive(true);
+     CurrentPlayer.ply.setFinance(CurrentPlayer.ply.getFinance()-actionList.get(actionno).getCost());
+     return true;
+ }
+ else{
+     return false;
+ }
 }
 
 }
