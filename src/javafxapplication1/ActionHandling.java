@@ -34,5 +34,21 @@ static public boolean applyAction(int actionno){
      return false;
  }
 }
+public static void addWeek(){
+    CurrentPlayer.ply.setTurns(CurrentPlayer.ply.getTurns()+1);
+    for(int i=0; i<CurrentPlayer.PlyactionList.size();i++){
+        if(CurrentPlayer.PlyactionList.get(i).isIsActive()){
+            CurrentPlayer.PlyactionList.get(i).setTurnsTake(CurrentPlayer.PlyactionList.get(i).getTurnsTake()-1);
+        }
+        if(CurrentPlayer.PlyactionList.get(i).getTurnsTake()==0){
+            CurrentPlayer.PlyactionList.get(i).setIsActive(false);
+        }
+        if(CurrentPlayer.PlyactionList.get(i).isIsActive()==true&&CurrentPlayer.PlyactionList.get(i).getRevenueWks()>0){
+            if(CurrentPlayer.PlyactionList.get(i).getRevenueWks()==actionList.get(CurrentPlayer.PlyactionList.get(i).getNcrt()).getRevenueWks()){
+               CurrentPlayer.PlyactionList.get(i).setIncreaseCredibility(CurrentPlayer.PlyactionList.get(i).);
+            }
+        }
+    }
+}
 
 }
