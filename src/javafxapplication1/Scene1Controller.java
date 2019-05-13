@@ -5,6 +5,7 @@
  */
 package javafxapplication1;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +28,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import static javafxapplication1.CurrentPlayer.istoricF;
+
 
 /**
  *
@@ -92,6 +95,8 @@ public class Scene1Controller implements Initializable {
             Stage stageTheLabelBelongs = (Stage) button.getScene().getWindow();
             Parent root;
             CurrentPlayer.updatePlayer(ply);
+            CurrentPlayer.istoricF.add(CurrentPlayer.SeriesF);
+            ActionHandling.createActionList();
             try {
                 root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
                 stageTheLabelBelongs.setScene(new Scene(root));

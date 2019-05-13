@@ -10,9 +10,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" opacity="0.49" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #5ad602;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene1Controller">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #86e0b3; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene1Controller">
     <children>
         <Button id="btnclickme" fx:id="button" layoutX="139.0" layoutY="378.0" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: BLACK; -fx-background-radius: 80 0 0 80;" text="Create Company" textAlignment="CENTER" textFill="WHITE">
          <opaqueInsets>
@@ -57,7 +59,7 @@
          <font>
             <Font name="Gill Sans MT Condensed" size="12.0" />
          </font></Label>
-      <Label fx:id="lblTitlu" layoutX="86.0" layoutY="67.0" prefHeight="46.0" prefWidth="312.0" text="BUISNESS SIMULATOR" textFill="#a40505">
+      <Label fx:id="lblTitlu" layoutX="84.0" layoutY="88.0" prefHeight="46.0" prefWidth="312.0" text="BUISNESS SIMULATOR" textFill="#a40505" visible="false">
          <font>
             <Font size="30.0" />
          </font>
@@ -67,5 +69,18 @@
             <Image url="@resources/IMG-20190427-WA0042.jpg" />
          </image>
       </ImageView>
+      <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="312.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Gill Sans Ultra Bold Condensed" size="36.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#ff0909" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
     </children>
 </AnchorPane>

@@ -68,9 +68,9 @@ public class Player {
         this.people = people;
         this.gender =gender;
     }
-    public void addWeek(){
-    this.turns++;
-}
+ //   public void addWeek(){
+ //   this.turns++;
+//}
 
     public String getPersoana() {
         return persoana;

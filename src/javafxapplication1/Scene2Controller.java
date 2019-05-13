@@ -5,7 +5,8 @@
  */
 package javafxapplication1;
 
-import DbConn.DatabaseUtil;
+//import DbConn.DatabaseUtil;
+
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -15,8 +16,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+//import javafx.collections.ObservableList;
+//import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
@@ -32,17 +35,17 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
-
+import javafxapplication1.ActionHandling;
 /**
  *
  * @author daniel.constantin
  */
 public class Scene2Controller implements Initializable {
-    Player ply;
+ static Player ply;
     StringProperty dialogH;
     static int actionNo;
     Alert dialogAlert = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.APPLY, ButtonType.CANCEL);
-    
+    Alert alertReject = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CANCEL);
         @FXML
     private ProgressBar pbCredibility;
     DoubleProperty CredibilityUpdater = new SimpleDoubleProperty(.5);
@@ -83,7 +86,7 @@ public class Scene2Controller implements Initializable {
     private Label lblTeamB;
 
     @FXML
-    private Label lblFires;
+    private Label lblSoftware;
 
     @FXML
     private Label lblBonus;
@@ -101,7 +104,7 @@ public class Scene2Controller implements Initializable {
     private Label lblMInsert;
 
     @FXML
-    private Label lblDiscount;
+    private Label lblOnline;
 
     @FXML
     private Label lblChangeD;
@@ -131,11 +134,9 @@ public class Scene2Controller implements Initializable {
     
     @FXML
     private DialogPane dialogAccept ;//lert.getDialogPane()
-//      @FXML
-   //rivate Button btndialogApply;
- //     @FXML
-  //private Button btndialogCancel;
-  
+
+     @FXML
+    private DialogPane dialogReject ;//lert.getDialogPane()
 
     @FXML
     private ProgressBar pbFinance;
@@ -163,74 +164,108 @@ public class Scene2Controller implements Initializable {
      
     @FXML
     private void OnMouseClicked(MouseEvent e) {
+        CurrentPlayer.updatePlayer(ply);
         if(e.getSource()==btnNextWeek){
-            ply.addWeek();
+            ActionHandling.addWeek();
             lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
             lblFounds.textProperty().bind(foundsUpdater.asString());
            CurrentPlayer.SeriesF.getData().add(new XYChart.Data<>(Integer.toString(ply.getTurns()),Integer.valueOf(ply.getFinance())));
+           //ply.updatePlayer(ply);
+           for(int m=0; m<ActionHandling.lblenable.length;m++){
+           
+               switch(m){
+                   case 0: if(ActionHandling.lblenable[m]==0) lblNewP.setDisable(false);
+                   case 1: if(ActionHandling.lblenable[m]==0) lblImproveP.setDisable(false);
+                   case 2: if(ActionHandling.lblenable[m]==0) lblCostR.setDisable(false);
+                   case 3: if(ActionHandling.lblenable[m]==0) lblTeamB.setDisable(false);
+                   case 4: if(ActionHandling.lblenable[m]==0) lblBonus.setDisable(false);
+                   case 5: if(ActionHandling.lblenable[m]==0) lblTrainning.setDisable(false);
+                   case 6: if(ActionHandling.lblenable[m]==0) lblTVSpot.setDisable(false);
+                   case 7: if(ActionHandling.lblenable[m]==0) lblMInsert.setDisable(false);
+                   case 8: if(ActionHandling.lblenable[m]==0) lblChangeD.setDisable(false);
+                   case 9: if(ActionHandling.lblenable[m]==0) lblOnline.setDisable(false);
+                   case 10:if(ActionHandling.lblenable[m]==0) lblSoftware.setDisable(false);
+                   default:
+ 
+               }
+           }
         }
         if(e.getSource()==lblNewP){
-        actionNo =0;
+        implementAction(0,lblNewP);
+        }
+        if(e.getSource()==lblImproveP){
+         implementAction(1,lblImproveP);
+        }
+        if(e.getSource()==lblCostR){
+        implementAction(2, lblCostR );
+        }
+        if(e.getSource()==lblTeamB){
+          implementAction(3, lblTeamB );
+        }
+        if(e.getSource()==lblSoftware){
+         implementAction(10, lblSoftware );
+        }
+        if(e.getSource()==lblBonus){
+        implementAction(4, lblBonus );
+        }
+        if(e.getSource()==lblTrainning){
+        implementAction(5, lblTrainning );
+        }
+        if(e.getSource()==lblTVSpot){
+        implementAction(6, lblTVSpot );
+        }
+        if(e.getSource()==lblMInsert){
+        implementAction(7, lblMInsert );
+        }
+        if(e.getSource()==lblChangeD){
+        implementAction(8, lblChangeD );
+        }
+        if(e.getSource()==lblOnline){
+        implementAction(9, lblOnline );
+        }
+        ply = CurrentPlayer.ply;
+        updateVisuals();
+    } 
+   
+    private void implementAction(int actionno, Label lbl ){
+        actionNo =actionno;
         dialogAlert.setHeaderText(ActionHandling.actionList.get(actionNo).getMessageHeader());     
         dialogAlert.setContentText(ActionHandling.actionList.get(actionNo).getMessageBody());
         Optional<ButtonType> option = dialogAlert.showAndWait();
+         CurrentPlayer.updatePlayer(ply);
          if (option.get() == null) {
          } else if (option.get() == ButtonType.APPLY) {
-         if(ActionHandling.applyAction(actionNo)==true){
-             lblNewP.setDisable(true);
-         }
-         //do stuff
+         if(ActionHandling.applyAction(actionNo)==true){ 
+              ply = CurrentPlayer.ply;
+             lbl.setDisable(true);
+         }else{
+             alertReject.setHeaderText("Insuficient Fonds!!!");     
+             alertReject.setContentText("You don't have enought money to implement this action!");
+             Optional<ButtonType> optionR = alertReject.showAndWait();
+             if (optionR.get() == null) {
+                } else if (optionR.get() == ButtonType.CANCEL) {
+                    alertReject.close();
+                }
+             }
          dialogAlert.close();
          } else if (option.get() == ButtonType.CANCEL) {
         dialogAlert.close();
             } 
-        }
-        if(e.getSource()==lblImproveP){
-      dialogAccept.setVisible(true);
-        dialogH.set("cacat imbunatatit");
-        }
-        if(e.getSource()==lblCostR){
-        dialogAccept.setVisible(true);
-            dialogH.set("cacat cu mot");
-        }
-        if(e.getSource()==lblTeamB){
-     dialogAccept.setVisible(true);
-        dialogH.set("Radu e gay");
-        }
-        if(e.getSource()==lblFires){
-      dialogAccept.setVisible(true);
-        dialogH.set("Radu e handi");
-        }
-        if(e.getSource()==lblBonus){
-    dialogAccept.setVisible(true);
-        dialogH.set("Danciu");
-        }
-        if(e.getSource()==lblTrainning){
-      dialogAccept.setVisible(true);
-        dialogH.set("Dirigu are chelia faina");
-        }
-        if(e.getSource()==lblTVSpot){
-      dialogAccept.setVisible(true);
-        dialogH.set("nush ce sa mai zic");
-        }
-        if(e.getSource()==lblMInsert){
-      dialogAccept.setVisible(true);
-        dialogH.set("lalalala");
-        }
-        if(e.getSource()==lblChangeD){
-      dialogAccept.setVisible(true);
-        dialogH.set("imi e foame");
-        }
-        if(e.getSource()==lblDiscount){
-     dialogAccept.setVisible(true);
-        dialogH.set("haha am cioco");
-        }
-  
-    } 
-   
+         FinancebarUpdater.set((double)ply.getFinance()/100000); 
+         CredibilityUpdater.set((double)ply.getCredibility()/100);
+         MotivationUpdater.set((double)ply.getPeople()/100);
+         
+    }
+    
+    private void updateVisuals(){
+        FinancebarUpdater.set((double)ply.getFinance()/100000); 
+         CredibilityUpdater.set((double)ply.getCredibility()/100);
+         MotivationUpdater.set((double)ply.getPeople()/100); 
+         lblFounds.textProperty().bind(new SimpleIntegerProperty(ply.getFinance()).asString());
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ply = CurrentPlayer.getCurrentPlayer();
+       ply = CurrentPlayer.ply;
         //lblcacat.setText(ply.get) 
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
         pbFinance.progressProperty().bind(FinancebarUpdater);
@@ -239,10 +274,11 @@ public class Scene2Controller implements Initializable {
         MotivationUpdater.set((double)ply.getPeople()/100);
         pbMotivation.progressProperty().bind(MotivationUpdater);
         lblnam.setText(ply.getName());
-        dialogH = new SimpleStringProperty("un header de cacat");
+       // dialogH = new SimpleStringProperty();
         foundsUpdater.set(ply.getFinance());
-         lblFounds.textProperty().bind(foundsUpdater.asString());
-        dialogAlert.titleProperty().bind(dialogH);
+       lblFounds.textProperty().bind(new SimpleIntegerProperty(ply.getFinance()).asString());
+        
+        //dialogAlert.titleProperty().bind(dialogH);
         lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
         
      //   DatabaseUtil dbu = new DatabaseUtil();
@@ -251,7 +287,9 @@ public class Scene2Controller implements Initializable {
         //chartFinancial.categoryGapProperty().set(.5);
         
         
-    
+        DialogPane dialogReject = alertReject.getDialogPane();
+        dialogReject.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
+        dialogReject.autosize();
         dialogAccept = dialogAlert.getDialogPane();
         dialogAccept.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
         dialogAccept.autosize();
@@ -259,4 +297,5 @@ public class Scene2Controller implements Initializable {
 
 
 }
+
 }
