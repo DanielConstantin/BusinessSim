@@ -167,6 +167,7 @@ public class Scene2Controller implements Initializable {
         CurrentPlayer.updatePlayer(ply);
         if(e.getSource()==btnNextWeek){
             ActionHandling.addWeek();
+            ply = CurrentPlayer.ply;
             lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
             lblFounds.textProperty().bind(foundsUpdater.asString());
            CurrentPlayer.SeriesF.getData().add(new XYChart.Data<>(Integer.toString(ply.getTurns()),Integer.valueOf(ply.getFinance())));
@@ -174,17 +175,17 @@ public class Scene2Controller implements Initializable {
            for(int m=0; m<ActionHandling.lblenable.length;m++){
            
                switch(m){
-                   case 0: if(ActionHandling.lblenable[m]==0) lblNewP.setDisable(false);
-                   case 1: if(ActionHandling.lblenable[m]==0) lblImproveP.setDisable(false);
-                   case 2: if(ActionHandling.lblenable[m]==0) lblCostR.setDisable(false);
-                   case 3: if(ActionHandling.lblenable[m]==0) lblTeamB.setDisable(false);
-                   case 4: if(ActionHandling.lblenable[m]==0) lblBonus.setDisable(false);
-                   case 5: if(ActionHandling.lblenable[m]==0) lblTrainning.setDisable(false);
-                   case 6: if(ActionHandling.lblenable[m]==0) lblTVSpot.setDisable(false);
-                   case 7: if(ActionHandling.lblenable[m]==0) lblMInsert.setDisable(false);
-                   case 8: if(ActionHandling.lblenable[m]==0) lblChangeD.setDisable(false);
-                   case 9: if(ActionHandling.lblenable[m]==0) lblOnline.setDisable(false);
-                   case 10:if(ActionHandling.lblenable[m]==0) lblSoftware.setDisable(false);
+                   case 0: if(ActionHandling.lblenable[m]==0) {lblNewP.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 1: if(ActionHandling.lblenable[m]==0) {lblImproveP.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 2: if(ActionHandling.lblenable[m]==0) {lblCostR.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 3: if(ActionHandling.lblenable[m]==0) {lblTeamB.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 4: if(ActionHandling.lblenable[m]==0) {lblBonus.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 5: if(ActionHandling.lblenable[m]==0) {lblTrainning.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 6: if(ActionHandling.lblenable[m]==0) {lblTVSpot.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 7: if(ActionHandling.lblenable[m]==0) {lblMInsert.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 8: if(ActionHandling.lblenable[m]==0) {lblChangeD.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 9: if(ActionHandling.lblenable[m]==0) {lblOnline.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 10:if(ActionHandling.lblenable[m]==0) {lblSoftware.setDisable(false);}else {lblBonus.setDisable(true);}
                    default:
  
                }
@@ -251,10 +252,7 @@ public class Scene2Controller implements Initializable {
          } else if (option.get() == ButtonType.CANCEL) {
         dialogAlert.close();
             } 
-         FinancebarUpdater.set((double)ply.getFinance()/100000); 
-         CredibilityUpdater.set((double)ply.getCredibility()/100);
-         MotivationUpdater.set((double)ply.getPeople()/100);
-         
+         updateVisuals();
     }
     
     private void updateVisuals(){
@@ -293,7 +291,7 @@ public class Scene2Controller implements Initializable {
         dialogAccept = dialogAlert.getDialogPane();
         dialogAccept.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
         dialogAccept.autosize();
-      // dialogAlert.getDialogPane().setStyle("javafxapplication1/resources/Alert.css");
+    
 
 
 }

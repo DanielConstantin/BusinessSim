@@ -24,8 +24,8 @@ public class PlyActions {
     private String messageBody;
     private boolean multiple;
     private boolean isActive;
-
-    public PlyActions(int ncrt, String actionName, int turnsTake, int cost, int weeklyRevenue, int revenueWks, int increaseCredibility, int increaseMotivation, String messageHeader, String messageBody, boolean multiple, boolean isActive) {
+    private int wksMartor;
+    public PlyActions(int ncrt, String actionName, int turnsTake, int cost, int weeklyRevenue, int revenueWks, int increaseCredibility, int increaseMotivation, String messageHeader, String messageBody, boolean multiple, boolean isActive, int wksM) {
         this.ncrt = ncrt;
         this.actionName = actionName;
         this.turnsTake = turnsTake;
@@ -38,6 +38,7 @@ public class PlyActions {
         this.messageBody = messageBody;
         this.multiple = multiple;
         this.isActive = isActive;
+        this.wksMartor= wksM;
     }
  
     
@@ -136,6 +137,14 @@ public class PlyActions {
 
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public int getWksMartor() {
+        return wksMartor;
+    }
+
+    public void setWksMartor(int wksMartor) {
+        this.wksMartor = wksMartor;
     }
     
    
