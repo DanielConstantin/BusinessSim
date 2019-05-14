@@ -26,6 +26,7 @@ public class PlyActions {
     private boolean isActive;
     private int wksMartor;
     private int tksMartor;
+    
     public PlyActions(int ncrt, String actionName, int turnsTake, int cost, int weeklyRevenue, int revenueWks, int increaseCredibility, int increaseMotivation, String messageHeader, String messageBody, boolean multiple, boolean isActive, int wksM, int trnsM) {
         this.ncrt = ncrt;
         this.actionName = actionName;
