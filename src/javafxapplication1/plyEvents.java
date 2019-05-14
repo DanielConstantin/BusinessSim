@@ -7,7 +7,7 @@ package javafxapplication1;
 
 /**
  *
- * @author daniel.constantin
+ * @author
  */
 public class plyEvents {
     
