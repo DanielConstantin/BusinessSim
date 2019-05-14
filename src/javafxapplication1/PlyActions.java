@@ -25,7 +25,8 @@ public class PlyActions {
     private boolean multiple;
     private boolean isActive;
     private int wksMartor;
-    public PlyActions(int ncrt, String actionName, int turnsTake, int cost, int weeklyRevenue, int revenueWks, int increaseCredibility, int increaseMotivation, String messageHeader, String messageBody, boolean multiple, boolean isActive, int wksM) {
+    private int tksMartor;
+    public PlyActions(int ncrt, String actionName, int turnsTake, int cost, int weeklyRevenue, int revenueWks, int increaseCredibility, int increaseMotivation, String messageHeader, String messageBody, boolean multiple, boolean isActive, int wksM, int trnsM) {
         this.ncrt = ncrt;
         this.actionName = actionName;
         this.turnsTake = turnsTake;
@@ -39,6 +40,7 @@ public class PlyActions {
         this.multiple = multiple;
         this.isActive = isActive;
         this.wksMartor= wksM;
+        this.tksMartor = trnsM;
     }
  
     
@@ -145,6 +147,14 @@ public class PlyActions {
 
     public void setWksMartor(int wksMartor) {
         this.wksMartor = wksMartor;
+    }
+
+    public int getTksMartor() {
+        return tksMartor;
+    }
+
+    public void setTksMartor(int tksMartor) {
+        this.tksMartor = tksMartor;
     }
     
    

@@ -7,6 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +23,10 @@
          </opaqueInsets>
          <font>
             <Font name="System Bold" size="12.0" />
-         </font></Button>
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
       <Label layoutX="34.0" layoutY="190.0" text="Company Name:">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
@@ -68,6 +72,9 @@
          <image>
             <Image url="@resources/Image-4219.png" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
       <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="312.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>

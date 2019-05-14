@@ -26,7 +26,7 @@ class CurrentPlayer {
  static  ObservableList<XYChart.Series<Integer, Integer>> istoricC= FXCollections.observableArrayList();
  static ObservableList<XYChart.Series<Integer, Integer>> istoricM= FXCollections.observableArrayList();
  static XYChart.Series SeriesF = new Series<>();
- static List<PlyActions> PlyactionList= FXCollections.observableArrayList();
+ static List<PlyActions> PlyactionList= new ArrayList<>();
         
    
 public static void updatePlayer(Player pl){

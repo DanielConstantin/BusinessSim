@@ -235,6 +235,7 @@ public class Scene2Controller implements Initializable {
         Optional<ButtonType> option = dialogAlert.showAndWait();
          CurrentPlayer.updatePlayer(ply);
          if (option.get() == null) {
+             dialogAlert.close();
          } else if (option.get() == ButtonType.APPLY) {
          if(ActionHandling.applyAction(actionNo)==true){ 
               ply = CurrentPlayer.ply;
