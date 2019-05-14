@@ -64,9 +64,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgcaracter" fitHeight="153.0" fitWidth="122.0" layoutX="325.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgcaracter" fitHeight="153.0" fitWidth="122.0" layoutX="325.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@resources/IMG-20190427-WA0042.jpg" />
+            <Image url="@resources/Image-4219.png" />
          </image>
       </ImageView>
       <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="312.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">

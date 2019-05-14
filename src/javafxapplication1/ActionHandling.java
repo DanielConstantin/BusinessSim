@@ -51,7 +51,7 @@ static public boolean applyAction(int actionno){
  if( CurrentPlayer.ply.getFinance()>=actionList.get(actionno).getCost()){
      PlyActions pa= actionList.get(actionno);
      pa.setIsActive(true);
-     pa.setRevenueWks(pa.getRevenueWks()+1);
+   // pa.setRevenueWks(pa.getRevenueWks()+1);
      CurrentPlayer.PlyactionList.add(pa);
   //   CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).setIsActive(true);
   //   CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).setRevenueWks(CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).getRevenueWks()+1);
@@ -85,17 +85,17 @@ public static void addWeek(){
         }   
 
         if(CurrentPlayer.PlyactionList.get(i).isIsActive()==false && CurrentPlayer.PlyactionList.get(i).getRevenueWks()>0){
-            System.out.println("in if 1"+" Revenuewks=" + CurrentPlayer.PlyactionList.get(i).getRevenueWks()+ "weeklyrev="+CurrentPlayer.PlyactionList.get(i).getWeeklyRevenue()+"trigger = "+lblenable[CurrentPlayer.PlyactionList.get(i).getNcrt()]);
             
             if(CurrentPlayer.PlyactionList.get(i).getRevenueWks()==CurrentPlayer.PlyactionList.get(i).getWksMartor()){
-             System.out.println("in if 2"+" Revenuewks=" + CurrentPlayer.PlyactionList.get(i).getRevenueWks()+ "weeklyrev="+CurrentPlayer.PlyactionList.get(i).getWeeklyRevenue()+"action listrevw = "+actionList.get(CurrentPlayer.PlyactionList.get(i).getNcrt()).getRevenueWks());
                CurrentPlayer.ply.setPeople(CurrentPlayer.PlyactionList.get(i).getIncreaseMotivation()+CurrentPlayer.ply.getPeople());
-               CurrentPlayer.ply.setCredibility(CurrentPlayer.PlyactionList.get(i).getIncreaseCredibility()+CurrentPlayer.ply.getCredibility());
-              lblenable[CurrentPlayer.PlyactionList.get(i).getNcrt()]=0;           
-            }
+               CurrentPlayer.ply.setCredibility(CurrentPlayer.PlyactionList.get(i).getIncreaseCredibility()+CurrentPlayer.ply.getCredibility());              
+               CurrentPlayer.PlyactionList.get(i).setRevenueWks(CurrentPlayer.PlyactionList.get(i).getRevenueWks()-1);
                CurrentPlayer.ply.setFinance(CurrentPlayer.ply.getFinance()+CurrentPlayer.PlyactionList.get(i).getWeeklyRevenue());
-                CurrentPlayer.PlyactionList.get(i).setRevenueWks(CurrentPlayer.PlyactionList.get(i).getRevenueWks()-1);
-                System.out.println("sfarsit if"+" Revenuewks=" + CurrentPlayer.PlyactionList.get(i).getRevenueWks()+ "weeklyrev="+CurrentPlayer.PlyactionList.get(i).getWeeklyRevenue()+"trigger = "+lblenable[CurrentPlayer.PlyactionList.get(i).getNcrt()]);
+              lblenable[CurrentPlayer.PlyactionList.get(i).getNcrt()]=0;           
+            }else{
+               CurrentPlayer.ply.setFinance(CurrentPlayer.ply.getFinance()+CurrentPlayer.PlyactionList.get(i).getWeeklyRevenue());
+                CurrentPlayer.PlyactionList.get(i).setRevenueWks(CurrentPlayer.PlyactionList.get(i).getRevenueWks()-1);}
+               
         }     
 
     }

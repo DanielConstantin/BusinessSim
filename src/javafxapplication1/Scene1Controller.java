@@ -75,9 +75,9 @@ public class Scene1Controller implements Initializable {
     @FXML
     private void handleRadioButtonSel(MouseEvent e){
         if(e.getSource()==rbMale){             
-            imgcaracter.setImage(new Image("javafxapplication1/resources/IMG-20190427-WA0041.jpg"));
+            imgcaracter.setImage(new Image("javafxapplication1/resources/Image-6777.png"));
         } else if(e.getSource()==rbFemale){
-            imgcaracter.setImage(new Image("javafxapplication1/resources/IMG-20190427-WA0042.jpg"));
+            imgcaracter.setImage(new Image("javafxapplication1/resources/Image-4219.png"));
         }
     }
 

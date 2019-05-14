@@ -175,17 +175,17 @@ public class Scene2Controller implements Initializable {
            for(int m=0; m<ActionHandling.lblenable.length;m++){
            
                switch(m){
-                   case 0: if(ActionHandling.lblenable[m]==0) {lblNewP.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 1: if(ActionHandling.lblenable[m]==0) {lblImproveP.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 2: if(ActionHandling.lblenable[m]==0) {lblCostR.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 3: if(ActionHandling.lblenable[m]==0) {lblTeamB.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 0: if(ActionHandling.lblenable[m]==0) {lblNewP.setDisable(false);}else {lblNewP.setDisable(true);}
+                   case 1: if(ActionHandling.lblenable[m]==0) {lblImproveP.setDisable(false);}else {lblImproveP.setDisable(true);}
+                   case 2: if(ActionHandling.lblenable[m]==0) {lblCostR.setDisable(false);}else {lblCostR.setDisable(true);}
+                   case 3: if(ActionHandling.lblenable[m]==0) {lblTeamB.setDisable(false);}else {lblTeamB.setDisable(true);}
                    case 4: if(ActionHandling.lblenable[m]==0) {lblBonus.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 5: if(ActionHandling.lblenable[m]==0) {lblTrainning.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 6: if(ActionHandling.lblenable[m]==0) {lblTVSpot.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 7: if(ActionHandling.lblenable[m]==0) {lblMInsert.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 8: if(ActionHandling.lblenable[m]==0) {lblChangeD.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 9: if(ActionHandling.lblenable[m]==0) {lblOnline.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 10:if(ActionHandling.lblenable[m]==0) {lblSoftware.setDisable(false);}else {lblBonus.setDisable(true);}
+                   case 5: if(ActionHandling.lblenable[m]==0) {lblTrainning.setDisable(false);}else {lblTrainning.setDisable(true);}
+                   case 6: if(ActionHandling.lblenable[m]==0) {lblTVSpot.setDisable(false);}else {lblTVSpot.setDisable(true);}
+                   case 7: if(ActionHandling.lblenable[m]==0) {lblMInsert.setDisable(false);}else {lblMInsert.setDisable(true);}
+                   case 8: if(ActionHandling.lblenable[m]==0) {lblChangeD.setDisable(false);}else {lblChangeD.setDisable(true);}
+                   case 9: if(ActionHandling.lblenable[m]==0) {lblOnline.setDisable(false);}else {lblOnline.setDisable(true);}
+                   case 10:if(ActionHandling.lblenable[m]==0) {lblSoftware.setDisable(false);}else {lblSoftware.setDisable(true);}
                    default:
  
                }
