@@ -45,7 +45,7 @@ import javafx.stage.Stage;
 import javafxapplication1.ActionHandling;
 /**
  *
- * @author daniel.constantin
+ * @author 
  */
 public class Scene2Controller implements Initializable {
     private Player ply;

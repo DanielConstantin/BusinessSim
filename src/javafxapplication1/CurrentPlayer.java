@@ -18,7 +18,7 @@ import javafxapplication1.Player;
 
 /**
  *
- * @author daniel.constantin
+ * @author 
  */
  class  CurrentPlayer {
  static Player ply;

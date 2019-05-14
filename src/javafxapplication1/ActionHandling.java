@@ -14,7 +14,7 @@ import javafxapplication1.PlyActions;
 
 /**
  *
- * @author daniel.constantin
+ * @author 
  */
 public class ActionHandling {
     static int MAX_EVENT;
@@ -137,3 +137,4 @@ MAX_EVENT = eventList.size()-1;
 
 
 }
+ 
