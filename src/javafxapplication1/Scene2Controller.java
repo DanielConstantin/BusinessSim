@@ -7,9 +7,12 @@ package javafxapplication1;
 
 //import DbConn.DatabaseUtil;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -21,7 +24,10 @@ import javafx.collections.ObservableList;
 //import javafx.collections.ObservableList;
 //import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Accordion;
@@ -35,6 +41,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafxapplication1.ActionHandling;
 /**
  *
@@ -165,12 +172,20 @@ public class Scene2Controller implements Initializable {
     @FXML
     private void OnMouseClicked(MouseEvent e) {
         CurrentPlayer.updatePlayer(ply);
-        if(e.getSource()==btnNextWeek){
+        if (e.getSource() == btnNextWeek) {
             ActionHandling.addWeek();
             ply = CurrentPlayer.ply;
+            if (ply.getTurns() == 53) {
+                if (ply.getFinance() < 100000) {
+                    endOfLevel("GameOver.fxml");
+                } else {
+                    endOfLevel("LevelComplete.fxml");
+                }
+            }
             lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
             lblFounds.textProperty().bind(foundsUpdater.asString());
            CurrentPlayer.SeriesF.getData().add(new XYChart.Data<>(Integer.toString(ply.getTurns()),Integer.valueOf(ply.getFinance())));
+           
            //ply.updatePlayer(ply);
            for(int m=0; m<ActionHandling.lblenable.length;m++){
            
@@ -255,7 +270,18 @@ public class Scene2Controller implements Initializable {
             } 
          updateVisuals();
     }
-    
+    @FXML
+    private void endOfLevel(String showScene){
+    Parent root;
+    CurrentPlayer.updatePlayer(ply);
+    Stage stageTheLabelBelongs = (Stage) btnNextWeek.getScene().getWindow(); 
+    try {
+                root = FXMLLoader.load(getClass().getResource(showScene));
+                stageTheLabelBelongs.setScene(new Scene(root));
+            } catch (IOException ex) {
+                Logger.getLogger(Scene2Controller.class.getName()).log(Level.SEVERE, null, ex);
+            }     
+}
     private void updateVisuals(){
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
          CredibilityUpdater.set((double)ply.getCredibility()/100);
