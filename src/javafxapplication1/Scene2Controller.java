@@ -275,6 +275,7 @@ public class Scene2Controller implements Initializable {
     Parent root;
     CurrentPlayer.updatePlayer(ply);
     Stage stageTheLabelBelongs = (Stage) btnNextWeek.getScene().getWindow(); 
+    stageTheLabelBelongs.setTitle("Business Simulator");
     try {
                 root = FXMLLoader.load(getClass().getResource(showScene));
                 stageTheLabelBelongs.setScene(new Scene(root));
