@@ -28,10 +28,9 @@ public class JavaFXApplication1 extends Application {
         stage.setScene(scene);
         stage.setTitle("Business Simulator");
         stage.show();
+ 
     }
-public void changeScene(Scene scene, String title){
-    
-}
+
     /**
      * @param args the command line arguments
      */

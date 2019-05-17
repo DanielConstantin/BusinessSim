@@ -54,6 +54,8 @@ public class Scene2Controller implements Initializable {
     
     Alert dialogAlert;
     Alert alertReject;
+    Alert alertEvent;
+    
     
     @FXML
     private ProgressBar pbCredibility;
@@ -155,6 +157,9 @@ public class Scene2Controller implements Initializable {
 
     @FXML
     private DialogPane dialogReject;
+    
+     @FXML
+    private DialogPane dialogEvent;
 
     @FXML
     private Label lblcredibilprc;
@@ -166,7 +171,8 @@ public class Scene2Controller implements Initializable {
     private Label lblmotivprc;
     
     
-    //
+ 
+
     
  
  //   @FXML
@@ -176,6 +182,7 @@ public class Scene2Controller implements Initializable {
      
     @FXML
     private void OnMouseClicked(MouseEvent e) {
+         
         CurrentPlayer.updatePlayer(ply);
         if (e.getSource() == btnNextWeek) {
             ActionHandling.addWeek();
@@ -209,6 +216,22 @@ public class Scene2Controller implements Initializable {
                    default:
  
                }
+           }
+           updateVisuals();
+           
+           if(ply.getTurns()>1){
+           int chooseEv =(int)(Math.random()*ActionHandling.MAX_EVENT);
+           alertEvent.setHeaderText(ActionHandling.eventList.get(chooseEv).getEvName());     
+           alertEvent.setContentText(ActionHandling.eventList.get(chooseEv).getEvMessage());
+           Optional<ButtonType> optionn = alertEvent.showAndWait();         
+          
+             if (optionn.get() == ButtonType.CLOSE) {
+                 System.out.println(chooseEv);
+                 System.out.println(ActionHandling.eventList.get(chooseEv).getEvFinancial());
+                 ply.setFinance(ActionHandling.eventList.get(chooseEv).getEvFinancial()+ply.getFinance());
+                 CurrentPlayer.updatePlayer(ply);
+                 alertEvent.close();
+            } 
            }
         }
         if(e.getSource()==lblNewP){
@@ -273,6 +296,8 @@ public class Scene2Controller implements Initializable {
          } else if (option.get() == ButtonType.CANCEL) {
         dialogAlert.close();
             } 
+         
+            
          updateVisuals();
     }
     @FXML
@@ -301,18 +326,24 @@ public class Scene2Controller implements Initializable {
 //        System.out.println(CurrentPlayer.ply.getName()==null);
         dialogAlert = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.APPLY, ButtonType.CANCEL);
         alertReject = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CANCEL);
+        alertEvent = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CLOSE);
         CredibilityUpdater = new SimpleDoubleProperty(.5);
         MotivationUpdater = new SimpleDoubleProperty(.5);
        FinancebarUpdater = new SimpleDoubleProperty(.5);
        foundsUpdater = new SimpleIntegerProperty();
        
-        //lblcacat.setText(ply.get) 
+        /*
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
         pbFinance.progressProperty().bind(FinancebarUpdater);
         CredibilityUpdater.set((double)ply.getCredibility()/100);
         pbCredibility.progressProperty().bind(CredibilityUpdater);
         MotivationUpdater.set((double)ply.getPeople()/100);
         pbMotivation.progressProperty().bind(MotivationUpdater);
+*/       if(ply.getName()==null){
+            System.out.println("IS NULL");
+        }else{
+            System.out.println(ply.getName());
+        }
         lblnam.setText(ply.getName());
        // dialogH = new SimpleStringProperty();
         foundsUpdater.set(ply.getFinance());
@@ -333,9 +364,11 @@ public class Scene2Controller implements Initializable {
         dialogAccept = dialogAlert.getDialogPane();
         dialogAccept.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
         dialogAccept.autosize();
-    
-
-
+        dialogEvent = alertEvent.getDialogPane();
+        dialogEvent.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
+        dialogEvent.autosize();
+        dialogEvent.setPrefSize(300, 250);
+        
 }
 
 }

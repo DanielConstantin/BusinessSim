@@ -64,17 +64,17 @@ public class GameOverController implements Initializable {
           //Parent root;
         //    CurrentPlayer.updatePlayer(ply);
             Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-          
-     try {
-              // stageTheLabelBelongs.close();
-               Parent  root =FXMLLoader.load(getClass().getClassLoader().getResource("javafxapplication1/Scene1.fxml"));
+          stageTheLabelBelongs.close();
+  //   try {
+         //   stageTheLabelBelongs.close();
+        //       Parent  root =FXMLLoader.load(getClass().getClassLoader().getResource("javafxapplication1/Scene1.fxml"));
                 
-              stageTheLabelBelongs.setScene(new Scene(root));
+        //      stageTheLabelBelongs.setScene(new Scene(root));
                
-            } catch (IOException ex) {
-                 Logger.getLogger(GameOverController.class.getName()).log(Level.SEVERE, null, ex);
+   //         } catch (IOException ex) {
+   //             Logger.getLogger(GameOverController.class.getName()).log(Level.SEVERE, null, ex);
               
-            }  
+   //         }  
             
     }
 

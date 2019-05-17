@@ -20,7 +20,7 @@ import javafxapplication1.Player;
  *
  * @author daniel.constantin
  */
-class CurrentPlayer {
+ class  CurrentPlayer {
  static Player ply;
  static  ObservableList<XYChart.Series<Integer, Integer>> istoricF= FXCollections.observableArrayList();
  static  ObservableList<XYChart.Series<Integer, Integer>> istoricC= FXCollections.observableArrayList();

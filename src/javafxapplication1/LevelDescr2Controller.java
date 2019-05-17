@@ -61,24 +61,24 @@ public class LevelDescr2Controller implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-            //ply = CurrentPlayer.ply;
-            Parent root ;
-            CurrentPlayer.updatePlayer(ply);
-        //    Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            Stage stageTheLabelBelongs =(Stage) btnOK.getScene().getWindow();
-            CurrentPlayer.ply=null;
-            CurrentPlayer.PlyactionList=null;
-     try {
-          //    Platform.runLater();
-              root = FXMLLoader.load(getClass().getResource("javafxapplication1/Scene2.fxml"));
-              Scene scene = new Scene(root);
-              
-              stageTheLabelBelongs.setScene(scene);
+       try {
+           //ply = CurrentPlayer.ply;
+           Parent root ;
+           CurrentPlayer.updatePlayer(ply);
+           //    Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
+           Stage stageTheLabelBelongs =(Stage) btnOK.getScene().getWindow();
+           CurrentPlayer.ply=null;
+           CurrentPlayer.PlyactionList=null;
+           
+           //    Platform.runLater();
+           root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+           Scene scene = new Scene(root);
+           stageTheLabelBelongs.setScene(scene);
+       } catch (IOException ex) {
+           Logger.getLogger(LevelDescr2Controller.class.getName()).log(Level.SEVERE, null, ex);
+       }
                
-            } catch (IOException ex) {
-                 Logger.getLogger(Level1DescriptionController.class.getName()).log(Level.SEVERE, null, ex);
-              
-            }  
+           
             
     }
     }

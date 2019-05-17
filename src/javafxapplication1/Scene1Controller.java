@@ -98,6 +98,8 @@ public class Scene1Controller implements Initializable {
             CurrentPlayer.updatePlayer(ply);
             CurrentPlayer.istoricF.add(CurrentPlayer.SeriesF);
             ActionHandling.createActionList();
+            ActionHandling.createEvList();
+           System.out.println(ActionHandling.eventList.get(2).getEvMessage());
             stageTheLabelBelongs.setTitle("Business Simulator");
             try {
                 root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));

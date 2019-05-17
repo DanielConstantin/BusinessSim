@@ -17,9 +17,13 @@ import javafxapplication1.PlyActions;
  * @author daniel.constantin
  */
 public class ActionHandling {
+    static int MAX_EVENT;
     static List<PlyActions> actionList=new ArrayList();
     static List<plyEvents> eventList = new ArrayList();
     static  int[] lblenable = new int[20];
+    
+    
+    
 static public void createActionList(){
  PlyActions pa1 = new PlyActions(0, "New Product Development", 20, 20000, 2000, 52, 20, 10, "New Product Development", "The cost of this action is 20,000$, implementation takes 20 weeks and bring 2,000$/week till the end of the level. Other benefits: Credibility: +10, Motivation: +10.", false, false, 52,20); 
  PlyActions pa2 = new PlyActions(1, "Improve Products", 8, 4200, 400, 16, 5, 3, "Improve Products", "This action costs 4,200$, implementation takes 8 weeks and revenue/week is 400$ for 16 weeks after implementation is finalized. Other benefits: Credibility: +5, Motivation: +3.", false, false, 16,8); 
@@ -108,8 +112,15 @@ public static void addWeek(){
 static public void createEvList(){
  plyEvents ev0 = new plyEvents(0, "Clients", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
  plyEvents ev1 = new plyEvents(0, "Competitors", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
-
+plyEvents ev2 = new plyEvents(0, "Event ev2", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
+ plyEvents ev3 = new plyEvents(0, "Event ev3", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
  eventList.add(ev0);
- eventList.add(ev0); 
+ eventList.add(ev1); 
+ eventList.add(ev2);
+ eventList.add(ev3);
+ 
+MAX_EVENT = eventList.size();
 }
+
+
 }
