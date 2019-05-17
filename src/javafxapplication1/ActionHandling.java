@@ -110,17 +110,23 @@ public static void addWeek(){
      
 }
 static public void createEvList(){
- plyEvents ev0 = new plyEvents(0, "Clients", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
+ plyEvents ev0 = new plyEvents(0, "Clients", false,"You have a quality complain from a customer. Finance: -1000$, Credibility:-20, Motivation: -10.",-1000, -20, -10);
  plyEvents ev1 = new plyEvents(0, "Competitors", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
-plyEvents ev2 = new plyEvents(0, "Event ev2", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
- plyEvents ev3 = new plyEvents(0, "Event ev3", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
- plyEvents ev4 = new plyEvents(0, "Event ev4", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
- plyEvents ev5 = new plyEvents(0, "Event ev5", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
- plyEvents ev6 = new plyEvents(0, "Event ev6", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
- plyEvents ev7 = new plyEvents(0, "Event ev7", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
- plyEvents ev8 = new plyEvents(0, "Event ev8", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
- plyEvents ev9 = new plyEvents(0, "Event ev9", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
- 
+ plyEvents ev2 = new plyEvents(0, "Competitors", false,"A competitor is succesful with a new product. Finance: -1000$, -10, -10", -1000, -10, -10);
+ plyEvents ev3 = new plyEvents(0, "Supplier", true,"The producer lowers the price, but the quality. Finance: 500$, Credibility",+500, -2, -1);
+ plyEvents ev4 = new plyEvents(0, "Partenship", true,"Partnership with another company in terms of an event. Finance: +3000$, Credibility: +20, Motivation: +15",+3000, +20, +15);
+ plyEvents ev5 = new plyEvents(0, "Free Advertising",true, "A famous person promotes your product at an important gala. Finance: +3000$, Credibility: +40, Motivation: +30", +3000, +40, +30);
+ plyEvents ev6 = new plyEvents(0, "Autorities", false,"You got a fine. Finance: -3000$, Credibility: -1, Motivation: -1",-3000, -1, -1);
+ plyEvents ev7 = new plyEvents(0, "Products", false,"The sales of the main product dropped down. Finance: -3000, Credibility: -12, Motivation: -30",-3000, -12, -30);
+ plyEvents ev8 = new plyEvents(0, "Clients", true,"You win a auction. Finance: +1500$, Credibility: +1, Motivation: +2 ",+1500, +1, +2);
+ plyEvents ev9 = new plyEvents(0, "Clients", false,"You lost an auction. Finance: -1500$, Credibility -1, People -2",-1500, -1, -2);
+ plyEvents ev10= new plyEvents(0, "Authorities",false,"After an investigation you have to pay because you forgot to pay some bills. Finance: -2000$, Credibility -1, People -2",-2000,-1,-2);
+ plyEvents ev11= new plyEvents(0, "",true,"A famous magazine has chosen you to be the most innovative in terms of products. Finance: -1500$, Credibility -1, People -2",-1,-1,-1);
+ plyEvents ev12= new plyEvents(0, "",false,"",-1,-1,-1);
+ plyEvents ev13= new plyEvents(0, "",false,"",-1,-1,-1);
+ plyEvents ev14= new plyEvents(0, "",false,"",-1,-1,-1);
+ plyEvents ev15= new plyEvents(0, "",false,"",-1,-1,-1);
+ plyEvents ev16= new plyEvents(0, "",false,"",-1,-1,-1);
  eventList.add(ev0);
  eventList.add(ev1); 
  eventList.add(ev2);
