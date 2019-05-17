@@ -63,7 +63,7 @@ static public boolean applyAction(int actionno){
   //   CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).setIsActive(true);
   //   CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).setRevenueWks(CurrentPlayer.PlyactionList.get(CurrentPlayer.PlyactionList.size()-1).getRevenueWks()+1);
      
-  //  lblenable[actionList.get(actionno).getNcrt()]=1;   
+    lblenable[actionList.get(actionno).getNcrt()]=1;   
      CurrentPlayer.ply.setFinance(CurrentPlayer.ply.getFinance()-pa.getCost());
            return true;
      
@@ -171,6 +171,7 @@ static public void createEvList(){
  eventList.add(ev27);
  eventList.add(ev28);
  eventList.add(ev29); 
+ eventList.add(ev30); 
 MAX_EVENT = eventList.size()-1;
 }
 

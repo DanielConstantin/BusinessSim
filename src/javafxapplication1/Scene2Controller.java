@@ -48,7 +48,7 @@ import javafxapplication1.ActionHandling;
  * @author 
  */
 public class Scene2Controller implements Initializable {
-    private Player ply;
+    private static Player ply;
     StringProperty dialogH;
     static int actionNo;
     
@@ -59,19 +59,19 @@ public class Scene2Controller implements Initializable {
     
     @FXML
     private ProgressBar pbCredibility;
-    DoubleProperty CredibilityUpdater;
+    private  DoubleProperty CredibilityUpdater = new SimpleDoubleProperty(.5);
     @FXML
     private ProgressBar pbMotivation;
-     private DoubleProperty MotivationUpdater;
+     private DoubleProperty MotivationUpdater = new SimpleDoubleProperty(.5);
     @FXML
     private Label lblFounds;
-    private IntegerProperty foundsUpdater;
+    private final IntegerProperty foundsUpdater=new SimpleIntegerProperty();
     @FXML
     private Label lblnam11;
    // Alert alert = new Alert(Alert.AlertType.INFORMATION);
     @FXML
     private ProgressBar pbFinance;
-    private DoubleProperty FinancebarUpdater;
+    private final DoubleProperty FinancebarUpdater=new SimpleDoubleProperty();
     //
     
     @FXML
@@ -80,11 +80,8 @@ public class Scene2Controller implements Initializable {
     @FXML
     private Label lblWeek;
 
-   
     @FXML
     private Label lblCredibility;
-
-    
 
     @FXML
     private Label lblFinance;
@@ -94,8 +91,6 @@ public class Scene2Controller implements Initializable {
 
     @FXML
     private Label lblnam;
-
-
 
     @FXML
     private BarChart chartFinancial;
@@ -163,13 +158,13 @@ public class Scene2Controller implements Initializable {
 
     @FXML
     private Label lblcredibilprc;
-
+    public final IntegerProperty credibilityUpdater= new SimpleIntegerProperty();   
     @FXML
     private Label lblfinprc;
-
+    
     @FXML
     private Label lblmotivprc;
-    
+    public final IntegerProperty motivationUpdater=new SimpleIntegerProperty(); 
     
  
 
@@ -185,55 +180,45 @@ public class Scene2Controller implements Initializable {
          
         CurrentPlayer.updatePlayer(ply);
         if (e.getSource() == btnNextWeek) {
-            ActionHandling.addWeek();
-            ply = CurrentPlayer.ply;
-            if (ply.getTurns() == 53) {
+            
+            
+            if (ply.getTurns() == 52 || ply.getFinance()<=0 || 0 >=ply.getCredibility() || 0>=ply.getPeople()) {
                 if (ply.getFinance() < 100000) {
                     endOfLevel("GameOver.fxml");
                 } else {
                     endOfLevel("LevelComplete.fxml");
                 }
             }
+            ActionHandling.addWeek();
+            ply = CurrentPlayer.ply;
             lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
             lblFounds.textProperty().bind(foundsUpdater.asString());
-           CurrentPlayer.SeriesF.getData().add(new XYChart.Data<>(Integer.toString(ply.getTurns()),Integer.valueOf(ply.getFinance())));
-           
-           //ply.updatePlayer(ply);
+            
+            CurrentPlayer.SeriesF.getData().add(new XYChart.Data<>(Integer.toString(ply.getTurns()),Integer.valueOf(ply.getFinance())));
+            updateVisuals();
+           CurrentPlayer.updatePlayer(ply);
            for(int m=0; m<ActionHandling.lblenable.length;m++){
            
                switch(m){
-                   case 0: if(ActionHandling.lblenable[m]==0) {lblNewP.setDisable(false);}else {lblNewP.setDisable(true);}
-                   case 1: if(ActionHandling.lblenable[m]==0) {lblImproveP.setDisable(false);}else {lblImproveP.setDisable(true);}
-                   case 2: if(ActionHandling.lblenable[m]==0) {lblCostR.setDisable(false);}else {lblCostR.setDisable(true);}
-                   case 3: if(ActionHandling.lblenable[m]==0) {lblTeamB.setDisable(false);}else {lblTeamB.setDisable(true);}
-                   case 4: if(ActionHandling.lblenable[m]==0) {lblBonus.setDisable(false);}else {lblBonus.setDisable(true);}
-                   case 5: if(ActionHandling.lblenable[m]==0) {lblTrainning.setDisable(false);}else {lblTrainning.setDisable(true);}
-                   case 6: if(ActionHandling.lblenable[m]==0) {lblTVSpot.setDisable(false);}else {lblTVSpot.setDisable(true);}
-                   case 7: if(ActionHandling.lblenable[m]==0) {lblMInsert.setDisable(false);}else {lblMInsert.setDisable(true);}
-                   case 8: if(ActionHandling.lblenable[m]==0) {lblChangeD.setDisable(false);}else {lblChangeD.setDisable(true);}
-                   case 9: if(ActionHandling.lblenable[m]==0) {lblOnline.setDisable(false);}else {lblOnline.setDisable(true);}
-                   case 10:if(ActionHandling.lblenable[m]==0) {lblSoftware.setDisable(false);}else {lblSoftware.setDisable(true);}
-                   default:
+                   case 0: if(ActionHandling.lblenable[m]==0) {lblNewP.setDisable(false);}else {lblNewP.setDisable(true);continue;}
+                   case 1: if(ActionHandling.lblenable[m]==0) {lblImproveP.setDisable(false);}else {lblImproveP.setDisable(true);continue;}
+                   case 2: if(ActionHandling.lblenable[m]==0) {lblCostR.setDisable(false);}else {lblCostR.setDisable(true);continue;}
+                   case 3: if(ActionHandling.lblenable[m]==0) {lblTeamB.setDisable(false);}else {lblTeamB.setDisable(true);continue;}
+                   case 4: if(ActionHandling.lblenable[m]==0) {lblBonus.setDisable(false);}else {lblBonus.setDisable(true);continue;}
+                   case 5: if(ActionHandling.lblenable[m]==0) {lblTrainning.setDisable(false);}else {lblTrainning.setDisable(true);continue;}
+                   case 6: if(ActionHandling.lblenable[m]==0) {lblTVSpot.setDisable(false);}else {lblTVSpot.setDisable(true);continue;}
+                   case 7: if(ActionHandling.lblenable[m]==0) {lblMInsert.setDisable(false);}else {lblMInsert.setDisable(true);continue;}
+                   case 8: if(ActionHandling.lblenable[m]==0) {lblChangeD.setDisable(false);}else {lblChangeD.setDisable(true);continue;}
+                   case 9: if(ActionHandling.lblenable[m]==0) {lblOnline.setDisable(false);}else {lblOnline.setDisable(true);continue;}
+                   case 10:if(ActionHandling.lblenable[m]==0) {lblSoftware.setDisable(false);}else {lblSoftware.setDisable(true);continue;}
+                   default: 
  
                }
            }
-           updateVisuals();
-           int chooseEv =(int)(Math.random()*ActionHandling.MAX_EVENT)+(ActionHandling.MAX_EVENT/3);
-           System.out.println("chooseEv="+chooseEv);
-           if(ply.getTurns()>1 && (ActionHandling.MAX_EVENT)>=chooseEv){
            
-           alertEvent.setHeaderText(ActionHandling.eventList.get(chooseEv).getEvName());     
-           alertEvent.setContentText(ActionHandling.eventList.get(chooseEv).getEvMessage());
-           Optional<ButtonType> optionn = alertEvent.showAndWait();         
+           implementEvent();
           
-             if (optionn.get() == ButtonType.CLOSE) {
-                 System.out.println(chooseEv);
-                 System.out.println(ActionHandling.eventList.get(chooseEv).getEvFinancial());
-                 ply.setFinance(ActionHandling.eventList.get(chooseEv).getEvFinancial()+ply.getFinance());
-                 CurrentPlayer.updatePlayer(ply);
-                 alertEvent.close();
-            } 
-           }
+           
         }
         if(e.getSource()==lblNewP){
         implementAction(0,lblNewP);
@@ -297,9 +282,7 @@ public class Scene2Controller implements Initializable {
          } else if (option.get() == ButtonType.CANCEL) {
         dialogAlert.close();
             } 
-         
-            
-         updateVisuals();
+       //  updateVisuals();
     }
     @FXML
     private void endOfLevel(String showScene){
@@ -314,42 +297,72 @@ public class Scene2Controller implements Initializable {
                 Logger.getLogger(Scene2Controller.class.getName()).log(Level.SEVERE, null, ex);
             }     
 }
+    private void implementEvent(){
+        int chooseEv =(int)(Math.random()*ActionHandling.MAX_EVENT)+(ActionHandling.MAX_EVENT/4);
+           System.out.println("chooseEv="+chooseEv);
+           if(ply.getTurns()>1 && (ActionHandling.MAX_EVENT)>=chooseEv){
+           
+           alertEvent.setHeaderText(ActionHandling.eventList.get(chooseEv).getEvName());     
+           alertEvent.setContentText(ActionHandling.eventList.get(chooseEv).getEvMessage());
+           Optional<ButtonType> optionn = alertEvent.showAndWait();         
+          
+             if (optionn.get() == ButtonType.CLOSE) {
+  
+                 ply.setFinance(ActionHandling.eventList.get(chooseEv).getEvFinancial()+ply.getFinance());
+                 ply.setCredibility(ActionHandling.eventList.get(chooseEv).getEvCredibility()+ply.getCredibility());
+                 ply.setPeople(ActionHandling.eventList.get(chooseEv).getEvMotivation()+ply.getPeople());
+                 CurrentPlayer.updatePlayer(ply);
+                 updateVisuals();
+                 alertEvent.close();
+             
+            }
+       
+    
+            updateVisuals();
+           }
+    }
     private void updateVisuals(){
-        
+        lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
-         CredibilityUpdater.set((double)ply.getCredibility()/100);
+        
          MotivationUpdater.set((double)ply.getPeople()/100); 
-         lblFounds.textProperty().bind(new SimpleIntegerProperty(ply.getFinance()).asString());
+        lblFounds.textProperty().bind(new SimpleIntegerProperty(ply.getFinance()).asString());
+    
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ply = CurrentPlayer.ply;
-//        System.out.println(CurrentPlayer.ply.getName()==null);
         dialogAlert = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.APPLY, ButtonType.CANCEL);
         alertReject = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CANCEL);
         alertEvent = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CLOSE);
-        CredibilityUpdater = new SimpleDoubleProperty(.5);
-        MotivationUpdater = new SimpleDoubleProperty(.5);
-       FinancebarUpdater = new SimpleDoubleProperty(.5);
-       foundsUpdater = new SimpleIntegerProperty();
-       
-        /*
+     //   CredibilityUpdater = new SimpleDoubleProperty();
+   //     MotivationUpdater = new SimpleDoubleProperty();
+    //    FinancebarUpdater = new SimpleDoubleProperty();
+    //    foundsUpdater = new SimpleIntegerProperty();
+    //    credibilityUpdater = new SimpleIntegerProperty();
+    //    motivationUpdater = new SimpleIntegerProperty();
+      
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
         pbFinance.progressProperty().bind(FinancebarUpdater);
-        CredibilityUpdater.set((double)ply.getCredibility()/100);
-        pbCredibility.progressProperty().bind(CredibilityUpdater);
+    
+        
+    //    CredibilityUpdater.set(((double)ply.getCredibility()/100));
+    //    pbCredibility.progressProperty().add(CredibilityUpdater);
+        
+        
+        
         MotivationUpdater.set((double)ply.getPeople()/100);
-        pbMotivation.progressProperty().bind(MotivationUpdater);
-*/       if(ply.getName()==null){
-            System.out.println("IS NULL");
-        }else{
-            System.out.println(ply.getName());
-        }
+        pbMotivation.progressProperty().bind(MotivationUpdater);    
+       
         lblnam.setText(ply.getName());
        // dialogH = new SimpleStringProperty();
         foundsUpdater.set(ply.getFinance());
+    //    credibilityUpdater.set(ply.getCredibility());
+    //    motivationUpdater.set(ply.getPeople());
+       
        lblFounds.textProperty().bind(new SimpleIntegerProperty(ply.getFinance()).asString());
-        
+       lblmotivprc.textProperty().bind(new SimpleIntegerProperty(ply.getPeople()).asString());
+       lblcredibilprc.textProperty().bind(new SimpleIntegerProperty(ply.getCredibility()).asString());
         //dialogAlert.titleProperty().bind(dialogH);
         lblWeek.textProperty().bind(new SimpleIntegerProperty(52-(ply.getTurns())).asString());
         
