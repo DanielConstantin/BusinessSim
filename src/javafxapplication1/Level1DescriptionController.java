@@ -19,7 +19,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -33,46 +32,58 @@ import javafx.stage.Stage;
  *
  * @author daniel.constantin
  */
-public class GameOverController implements Initializable {
+public class Level1DescriptionController implements Initializable {
 
     Player ply;
-    @FXML
-    private Label lblDear;
-    @FXML
-    private Label lblnam111;
-  
   
     @FXML
     private Button btnOK;
 
-    
     @FXML
-    private ImageView imgcaracter;
-
-   
-    @FXML
-    private Label lblTtitlu;
+    private Label lblDear;
 
     @FXML
     private Label lblBadLuck;
+
+    @FXML
+    private ImageView imgcaracter;
+
+    @FXML
+    private Label lblnam111;
+
+    @FXML
+    private Label lblBadLuck1;
+
+    @FXML
+    private Label lblBadLuck11;
+
+    @FXML
+    private Label lblnam1111;
+
+    @FXML
+    private Label lblnam11111;
+
+    @FXML
+    private Label lblnam111111;
+
 
 
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-     //   CurrentPlayer ply =new CurrentPlayer();
-          //Parent root;
-        //    CurrentPlayer.updatePlayer(ply);
+        
+           Parent root;
+            CurrentPlayer.updatePlayer(ply);
             Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-          
+            CurrentPlayer.ply=null;
+            CurrentPlayer.PlyactionList=null;
      try {
-              // stageTheLabelBelongs.close();
-               Parent  root =FXMLLoader.load(getClass().getClassLoader().getResource("javafxapplication1/Scene1.fxml"));
-                
+            
+              root = FXMLLoader.load(getClass().getResource("javafxapplication1/Scene2.fxml"));
               stageTheLabelBelongs.setScene(new Scene(root));
                
             } catch (IOException ex) {
-                 Logger.getLogger(GameOverController.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(Level1DescriptionController.class.getName()).log(Level.SEVERE, null, ex);
               
             }  
             

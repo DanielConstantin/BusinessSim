@@ -48,21 +48,61 @@ import javafxapplication1.ActionHandling;
  * @author daniel.constantin
  */
 public class Scene2Controller implements Initializable {
- static Player ply;
+    private Player ply;
     StringProperty dialogH;
     static int actionNo;
-    Alert dialogAlert = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.APPLY, ButtonType.CANCEL);
-    Alert alertReject = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CANCEL);
-        @FXML
+    
+    Alert dialogAlert;
+    Alert alertReject;
+    
+    @FXML
     private ProgressBar pbCredibility;
-    DoubleProperty CredibilityUpdater = new SimpleDoubleProperty(.5);
+    DoubleProperty CredibilityUpdater;
+    @FXML
+    private ProgressBar pbMotivation;
+     private DoubleProperty MotivationUpdater;
+    @FXML
+    private Label lblFounds;
+    private IntegerProperty foundsUpdater;
+    @FXML
+    private Label lblnam11;
+   // Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    @FXML
+    private ProgressBar pbFinance;
+    private DoubleProperty FinancebarUpdater;
+    //
+    
+    @FXML
+    private Label lblYH;
+
+    @FXML
+    private Label lblWeek;
+
+   
     @FXML
     private Label lblCredibility;
 
-   // @FXML
-    //private Label lblFinVal;
-     @FXML
+    
+
+    @FXML
+    private Label lblFinance;
+
+    @FXML
     private Button btnNextWeek;
+
+    @FXML
+    private Label lblnam;
+
+
+
+    @FXML
+    private BarChart chartFinancial;
+
+    @FXML
+    private Label lblMotivation;
+
+    @FXML
+    private Label lblCredibility1;
 
     @FXML
     private Accordion accMenu;
@@ -80,28 +120,6 @@ public class Scene2Controller implements Initializable {
     private Label lblCostR;
 
     @FXML
-    private TitledPane acctpEmployees;
-    
-    @FXML
-    private Label lblYH;
-    
-    @FXML
-    private Label lblWeek;
-    //static IntegerProperty() tx =new SimpleIntegerProperty();
-    
-    @FXML
-    private Label lblTeamB;
-
-    @FXML
-    private Label lblSoftware;
-
-    @FXML
-    private Label lblBonus;
-
-    @FXML
-    private Label lblTrainning;
-
-    @FXML
     private TitledPane acctpMarketing;
 
     @FXML
@@ -117,57 +135,44 @@ public class Scene2Controller implements Initializable {
     private Label lblChangeD;
 
     @FXML
-    private Label lblnam;
+    private TitledPane acctpEmployees;
 
     @FXML
-    private ProgressBar pbMotivation;
-     static DoubleProperty MotivationUpdater = new SimpleDoubleProperty();
-    @FXML
-    private Label lblnam1;
+    private Label lblTeamB;
 
     @FXML
-    private Label lblMotivation;
+    private Label lblSoftware;
 
     @FXML
-    private Label lblCredibility1;
+    private Label lblBonus;
 
     @FXML
-    private Label lblFounds;
-    static IntegerProperty foundsUpdater = new SimpleIntegerProperty();
+    private Label lblTrainning;
+
 
     @FXML
-    private Label lblnam11;
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private DialogPane dialogAccept;
+
+    @FXML
+    private DialogPane dialogReject;
+
+    @FXML
+    private Label lblcredibilprc;
+
+    @FXML
+    private Label lblfinprc;
+
+    @FXML
+    private Label lblmotivprc;
     
-    @FXML
-    private DialogPane dialogAccept ;//lert.getDialogPane()
-
-     @FXML
-    private DialogPane dialogReject ;//lert.getDialogPane()
-
-    @FXML
-    private ProgressBar pbFinance;
-    static DoubleProperty FinancebarUpdater = new SimpleDoubleProperty();
-
-    @FXML
-    private BarChart chartFinancial;
     
-    @FXML
-    private void handleButtonAction(MouseEvent event) {
-        /*
-       Optional<ButtonType> option = dialogAlert.showAndWait();
+    //
+    
  
-      if (option.get() == null) {
-         
-      } else if (option.get() == ButtonType.APPLY) {
-         //do stuff
-      } else if (option.get() == ButtonType.CANCEL) {
-        dialogAccept.setVisible(false);
-      } else {
-         //
-      }
-   */
-    }
+ //   @FXML
+//    private Label lblnam1;
+
+    
      
     @FXML
     private void OnMouseClicked(MouseEvent e) {
@@ -284,6 +289,7 @@ public class Scene2Controller implements Initializable {
             }     
 }
     private void updateVisuals(){
+        
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
          CredibilityUpdater.set((double)ply.getCredibility()/100);
          MotivationUpdater.set((double)ply.getPeople()/100); 
@@ -291,7 +297,15 @@ public class Scene2Controller implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       ply = CurrentPlayer.ply;
+        ply = CurrentPlayer.ply;
+//        System.out.println(CurrentPlayer.ply.getName()==null);
+        dialogAlert = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.APPLY, ButtonType.CANCEL);
+        alertReject = new Alert(Alert.AlertType.INFORMATION, null, ButtonType.CANCEL);
+        CredibilityUpdater = new SimpleDoubleProperty(.5);
+        MotivationUpdater = new SimpleDoubleProperty(.5);
+       FinancebarUpdater = new SimpleDoubleProperty(.5);
+       foundsUpdater = new SimpleIntegerProperty();
+       
         //lblcacat.setText(ply.get) 
         FinancebarUpdater.set((double)ply.getFinance()/100000); 
         pbFinance.progressProperty().bind(FinancebarUpdater);

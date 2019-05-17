@@ -44,7 +44,8 @@ public class Scene1Controller implements Initializable {
     private TextField txtPersName;
     @FXML
     private Button button;
-
+    @FXML
+    private Label lblyrn;
     @FXML
     private Button btnLogo;
     @FXML
@@ -52,8 +53,8 @@ public class Scene1Controller implements Initializable {
 
     @FXML
     private TextField txtnume;
-    @FXML
-    private Label lblTtitlu;
+  //  @FXML
+  //  private Label lblTtitlu;
 
     @FXML
     private Label lblAdv;
