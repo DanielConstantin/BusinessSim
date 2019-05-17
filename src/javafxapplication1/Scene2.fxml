@@ -21,7 +21,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #86e0b3; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene2Controller">
     <children>
-      <Label fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="291.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" text="You have" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="291.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" text="Weeks left:" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Century" size="18.0" />
          </font>
@@ -97,13 +97,13 @@
         </yAxis>
       </BarChart>
       <Label fx:id="lblMotivation" layoutX="246.0" layoutY="141.0" prefHeight="26.0" prefWidth="64.0" text="Motivation:" textAlignment="RIGHT" wrapText="true" />
-      <Label fx:id="lblCredibility1" layoutX="363.0" layoutY="23.0" prefHeight="26.0" prefWidth="47.0" text="Founds:" textAlignment="RIGHT" wrapText="true">
+      <Label fx:id="lblCredibility1" layoutX="301.0" layoutY="35.0" prefHeight="28.0" prefWidth="61.0" text="Funds:" textAlignment="RIGHT" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Label>
       <Accordion fx:id="accMenu" layoutX="22.0" layoutY="85.0" prefHeight="256.0" prefWidth="213.0" style="-fx-border-style: NONE; -fx-border-width: 0;" stylesheets="@resources/Accordioncs.css">
         <panes>
-          <TitledPane fx:id="acctpRD" alignment="CENTER" animated="false" prefHeight="174.0" prefWidth="166.0" style="-fx-border-color: #5ad602;" text="R&amp;D" textAlignment="CENTER">
+          <TitledPane fx:id="acctpRD" alignment="CENTER" animated="false" prefHeight="174.0" prefWidth="166.0" style="-fx-border-color: #5ad602;" text="Development" textAlignment="CENTER">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #86e0b3;">
                      <children>
@@ -178,7 +178,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
           </TitledPane>
-          <TitledPane fx:id="acctpEmployees" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="167.0" prefWidth="202.0" text="Employees">
+          <TitledPane fx:id="acctpEmployees" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="167.0" prefWidth="202.0" text="Human Resources ">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="154.0" prefWidth="200.0" style="-fx-background-color: #86e0b3;">
                      <children>
@@ -226,11 +226,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Accordion>
-      <Label fx:id="lblFounds" layoutX="410.0" layoutY="23.0" prefHeight="26.0" prefWidth="54.0" textAlignment="RIGHT" wrapText="true">
+      <Label fx:id="lblFounds" layoutX="356.0" layoutY="35.0" prefHeight="28.0" prefWidth="89.0" textAlignment="RIGHT" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="149.0" layoutY="14.0" prefHeight="38.0" prefWidth="213.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="64.0" layoutY="30.0" prefHeight="38.0" prefWidth="213.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
          </font>

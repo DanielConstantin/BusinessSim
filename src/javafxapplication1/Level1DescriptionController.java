@@ -39,16 +39,16 @@ public class Level1DescriptionController implements Initializable {
     @FXML
     private Button btnOK;
 
-    @FXML
-    private Label lblDear;
+    //@FXML
+    //private Label lblDear;
 
     @FXML
     private Label lblBadLuck;
 
-    @FXML
-    private ImageView imgcaracter;
+    //@FXML
+    //private ImageView imgcaracter;
 
-    @FXML
+   @FXML
     private Label lblnam111;
 
     @FXML
@@ -92,15 +92,6 @@ public class Level1DescriptionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ply= CurrentPlayer.ply;
-        
-        
-       lblDear.setText("Dear "+ply.getName());
-       
-      if(ply.getGender()==0){
-           imgcaracter.setImage(new Image("javafxapplication1/resources/Image-4219.png"));
-      }else{
-          imgcaracter.setImage(new Image("javafxapplication1/resources/Image-6777.png"));
-      }
     }
 
 }
