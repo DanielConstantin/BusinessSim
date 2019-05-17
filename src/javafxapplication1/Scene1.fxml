@@ -67,7 +67,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="312.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+      <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="323.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Gill Sans Ultra Bold Condensed" size="36.0" />
          </font>

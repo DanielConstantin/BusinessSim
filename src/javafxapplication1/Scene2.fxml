@@ -223,7 +223,7 @@
           </TitledPane>
         </panes>
          <cursor>
-            <Cursor fx:constant="NONE" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </Accordion>
       <Label fx:id="lblFounds" layoutX="410.0" layoutY="23.0" prefHeight="26.0" prefWidth="54.0" textAlignment="RIGHT" wrapText="true">
