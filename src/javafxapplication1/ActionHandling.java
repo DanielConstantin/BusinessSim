@@ -114,12 +114,25 @@ static public void createEvList(){
  plyEvents ev1 = new plyEvents(0, "Competitors", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
 plyEvents ev2 = new plyEvents(0, "Event ev2", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
  plyEvents ev3 = new plyEvents(0, "Event ev3", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
+ plyEvents ev4 = new plyEvents(0, "Event ev4", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
+ plyEvents ev5 = new plyEvents(0, "Event ev5", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
+ plyEvents ev6 = new plyEvents(0, "Event ev6", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
+ plyEvents ev7 = new plyEvents(0, "Event ev7", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
+ plyEvents ev8 = new plyEvents(0, "Event ev8", false,"You have a quality complain from a customer. Finance: -1000, Credibility:-20, Motivation: -10.",-1000, -20, -10);
+ plyEvents ev9 = new plyEvents(0, "Event ev9", false,"Your major competitor implement a TV Spot that afect your sales. Finance: -4000$, Credibility -3, People -5.",-4000, -3, -5);
+ 
  eventList.add(ev0);
  eventList.add(ev1); 
  eventList.add(ev2);
  eventList.add(ev3);
+ eventList.add(ev4);
+ eventList.add(ev5); 
+ eventList.add(ev6);
+ eventList.add(ev7);
+ eventList.add(ev8);
+ eventList.add(ev9);
  
-MAX_EVENT = eventList.size();
+MAX_EVENT = eventList.size()-1;
 }
 
 

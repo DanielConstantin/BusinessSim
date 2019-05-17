@@ -218,9 +218,10 @@ public class Scene2Controller implements Initializable {
                }
            }
            updateVisuals();
+           int chooseEv =(int)(Math.random()*ActionHandling.MAX_EVENT)+(ActionHandling.MAX_EVENT/3);
+           System.out.println("chooseEv="+chooseEv);
+           if(ply.getTurns()>1 && (ActionHandling.MAX_EVENT)>=chooseEv){
            
-           if(ply.getTurns()>1){
-           int chooseEv =(int)(Math.random()*ActionHandling.MAX_EVENT);
            alertEvent.setHeaderText(ActionHandling.eventList.get(chooseEv).getEvName());     
            alertEvent.setContentText(ActionHandling.eventList.get(chooseEv).getEvMessage());
            Optional<ButtonType> optionn = alertEvent.showAndWait();         
