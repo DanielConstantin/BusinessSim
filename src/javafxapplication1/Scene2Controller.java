@@ -182,7 +182,7 @@ public class Scene2Controller implements Initializable {
         if (e.getSource() == btnNextWeek) {
             
             
-            if (ply.getTurns() == 52 || ply.getFinance()<=0 || 0 >=ply.getCredibility() || 0>=ply.getPeople()) {
+            if (ply.getTurns() == 51 || ply.getFinance()<=0 || 0 >=ply.getCredibility() || 0>=ply.getPeople()) {
                 if (ply.getFinance() < 100000) {
                     endOfLevel("GameOver.fxml");
                 } else {
@@ -215,9 +215,9 @@ public class Scene2Controller implements Initializable {
  
                }
            }
-           
+           if(ply.getTurns()<52){
            implementEvent();
-          
+        }
            
         }
         if(e.getSource()==lblNewP){

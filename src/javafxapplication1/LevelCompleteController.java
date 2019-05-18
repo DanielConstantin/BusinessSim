@@ -65,16 +65,9 @@ public class LevelCompleteController implements Initializable {
             Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
             CurrentPlayer.ply=null;
             CurrentPlayer.PlyactionList=null;
-     try {
-            
-               Parent  root =FXMLLoader.load(getClass().getClassLoader().getResource("Scene1.fxml"));
-                stageTheLabelBelongs.setTitle("Business Simulator");
-              stageTheLabelBelongs.setScene(new Scene(root));
-               
-            } catch (IOException ex) {
-                 Logger.getLogger(LevelCompleteController.class.getName()).log(Level.SEVERE, null, ex);
-              
-            }  
+            //  Parent  root =FXMLLoader.load(getClass().getClassLoader().getResource("Scene1.fxml"));
+            stageTheLabelBelongs.close();
+            //  stageTheLabelBelongs.setScene(new Scene(root));
             
     }
 

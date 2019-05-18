@@ -120,7 +120,7 @@ public class Scene1Controller implements Initializable {
                   Stage stage2 = new Stage();
                   Scene scene = new Scene(root2);
                  stage2.setScene(scene);
-                  stage2.setTitle("Business Simulator");
+                 stage2.setTitle("Business Simulator");
                 stage2.showAndWait();
                 Parent root  = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
                 stageTheLabelBelongs.setScene(new Scene(root));  
