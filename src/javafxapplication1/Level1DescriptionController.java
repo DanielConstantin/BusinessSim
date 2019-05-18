@@ -75,17 +75,8 @@ public class Level1DescriptionController implements Initializable {
            Parent root;
             CurrentPlayer.updatePlayer(ply);
             Stage stageTheLabelBelongs = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            CurrentPlayer.ply=null;
-            CurrentPlayer.PlyactionList=null;
-     try {
-            
-              root = FXMLLoader.load(getClass().getResource("javafxapplication1/Scene2.fxml"));
-              stageTheLabelBelongs.setScene(new Scene(root));
-               
-            } catch (IOException ex) {
-                 Logger.getLogger(Level1DescriptionController.class.getName()).log(Level.SEVERE, null, ex);
-              
-            }  
+      
+            stageTheLabelBelongs.close();  
             
     }
 
