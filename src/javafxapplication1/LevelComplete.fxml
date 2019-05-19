@@ -41,13 +41,13 @@
       </ImageView>
       <Label id="lblnam" fx:id="lblnam111" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="59.0" layoutY="112.0" prefHeight="45.0" prefWidth="362.0" text="Level Complete" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="36.0" />
+            <Font name="Capital Daren Regular" size="52.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <RadialGradient centerY="1.0" focusAngle="115.2" focusDistance="-0.23809523809523814" radius="1.0">
                <stops>
                   <Stop color="BLACK" />
-                  <Stop color="#ff0909" offset="1.0" />
+                  <Stop color="#eb0808" offset="1.0" />
                </stops>
             </RadialGradient>
          </textFill>

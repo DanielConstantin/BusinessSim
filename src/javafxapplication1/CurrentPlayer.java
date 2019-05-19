@@ -18,7 +18,7 @@ import javafxapplication1.Player;
 
 /**
  *
- * @author 
+ * @author Osamu
  */
  class  CurrentPlayer {
  static Player ply;

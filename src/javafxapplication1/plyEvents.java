@@ -7,7 +7,7 @@ package javafxapplication1;
 
 /**
  *
- * @author
+ * @author Osamu
  */
 public class plyEvents {
     private int nrcrt;

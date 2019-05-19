@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author daniel.constantin
+ * @author Osamu
  */
 public class LevelCompleteController implements Initializable {
 

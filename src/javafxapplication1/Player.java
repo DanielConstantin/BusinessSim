@@ -7,7 +7,7 @@ package javafxapplication1;
 
 /**
  *
- * @author 
+ * @author Osamu
  */
 public class Player {
 

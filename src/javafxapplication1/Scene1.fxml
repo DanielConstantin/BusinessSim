@@ -70,13 +70,13 @@
       </ImageView>
       <Label id="lblnam" fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="84.0" layoutY="53.0" prefHeight="45.0" prefWidth="323.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="36.0" />
+            <Font name="Capital Daren Italic" size="43.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <RadialGradient centerX="0.21348314606741572" centerY="0.9038461538461539" radius="0.5">
                <stops>
                   <Stop color="BLACK" />
-                  <Stop color="#ff0909" offset="1.0" />
+                  <Stop color="#b52a2a" offset="1.0" />
                </stops>
             </RadialGradient>
          </textFill>

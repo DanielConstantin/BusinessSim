@@ -21,17 +21,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #86e0b3; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.Scene2Controller">
     <children>
-      <Label fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="291.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" text="Weeks left:" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="lblYH" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="291.0" layoutY="179.0" prefHeight="25.0" prefWidth="109.0" text="Weeks left:" textAlignment="CENTER" textFill="#8f2011" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Century" size="18.0" />
+            <Font name="Big Caslon Medium" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="lblWeek" accessibleRole="TEXT_FIELD" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="313.0" layoutY="205.0" prefHeight="57.0" prefWidth="70.0" textAlignment="CENTER" textFill="#ef0000" textOverrun="CENTER_ELLIPSIS">
+      <Label fx:id="lblWeek" accessibleRole="TEXT_FIELD" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="313.0" layoutY="205.0" prefHeight="57.0" prefWidth="70.0" textAlignment="CENTER" textFill="#912011" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Rockwell Bold" size="25.0" />
          </font>
       </Label>
-      <ProgressBar fx:id="pbCredibility" cache="true" layoutX="315.0" layoutY="92.0" prefHeight="20.0" prefWidth="137.0" progress="0.5" AnchorPane.topAnchor="92.0">
+      <ProgressBar fx:id="pbCredibility" cache="true" layoutX="318.0" layoutY="93.0" prefHeight="20.0" prefWidth="137.0" progress="0.5" AnchorPane.topAnchor="93.0">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
@@ -39,8 +39,8 @@
             <DropShadow />
          </effect>
       </ProgressBar>
-      <Label fx:id="lblCredibility" layoutX="246.0" layoutY="89.0" prefHeight="26.0" prefWidth="61.0" text="Credibility:" textAlignment="RIGHT" wrapText="true" />
-      <ProgressBar fx:id="pbFinance" cache="true" layoutX="315.0" layoutY="118.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
+      <Label fx:id="lblCredibility" layoutX="242.0" layoutY="90.0" prefHeight="26.0" prefWidth="70.0" text="Credibility:" textAlignment="RIGHT" wrapText="true" />
+      <ProgressBar fx:id="pbFinance" cache="true" layoutX="318.0" layoutY="118.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
@@ -48,10 +48,10 @@
             <DropShadow />
          </effect>
       </ProgressBar>
-      <Label fx:id="lblFinance" layoutX="262.0" layoutY="115.0" prefHeight="26.0" prefWidth="48.0" text="Finance:" textAlignment="RIGHT" wrapText="true" />
-      <Button fx:id="btnNextWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="278.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#OnMouseClicked" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #912011; -fx-background-radius: 80  80 80;" text="Next week">
+      <Label fx:id="lblFinance" layoutX="248.0" layoutY="115.0" prefHeight="26.0" prefWidth="61.0" text="Finance:" textAlignment="RIGHT" wrapText="true" />
+      <Button fx:id="btnNextWeek" alignment="CENTER" contentDisplay="CENTER" layoutX="277.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#OnMouseClicked" prefHeight="64.0" prefWidth="137.0" style="-fx-background-color: #912011; -fx-background-radius: 80  80 80;" text="Next week">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+            <Font name="Big Caslon Medium" size="22.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -67,20 +67,18 @@
       </Button>
       <Label fx:id="lblnam" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="255.0" layoutY="56.0" prefHeight="28.0" prefWidth="202.0" text="Company Name" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="12.0" />
+            <Font name="Big Caslon Medium" size="21.0" />
          </font>
          <textFill>
-            <LinearGradient cycleMethod="REFLECT" endX="0.030158708965967618" endY="0.9365079380217053">
+            <RadialGradient centerY="0.8990384615384616" radius="0.5">
                <stops>
-                  <Stop color="#ef2c2c" />
-                  <Stop color="BLACK" offset="0.012771392081736891" />
-                  <Stop color="#b2381b" offset="0.8904030230016708" />
-                  <Stop color="#97a15d" offset="1.0" />
+                  <Stop color="BLACK" />
+                  <Stop color="#a11616" offset="1.0" />
                </stops>
-            </LinearGradient>
+            </RadialGradient>
          </textFill>
       </Label>
-      <ProgressBar fx:id="pbMotivation" cache="true" layoutX="315.0" layoutY="144.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
+      <ProgressBar fx:id="pbMotivation" cache="true" layoutX="318.0" layoutY="144.0" prefHeight="20.0" prefWidth="137.0" progress="0.5">
          <opaqueInsets>
             <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
          </opaqueInsets>
@@ -96,7 +94,7 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Label fx:id="lblMotivation" layoutX="246.0" layoutY="141.0" prefHeight="26.0" prefWidth="64.0" text="Motivation:" textAlignment="RIGHT" wrapText="true" />
+      <Label fx:id="lblMotivation" layoutX="237.0" layoutY="141.0" prefHeight="26.0" prefWidth="81.0" text="Motivation:" textAlignment="RIGHT" wrapText="true" />
       <Label fx:id="lblCredibility1" layoutX="301.0" layoutY="35.0" prefHeight="28.0" prefWidth="61.0" text="Funds:" textAlignment="RIGHT" wrapText="true">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -232,13 +230,13 @@
          </font></Label>
       <Label fx:id="lblnam11" alignment="CENTER" contentDisplay="CENTER" ellipsisString="" layoutX="64.0" layoutY="30.0" prefHeight="38.0" prefWidth="213.0" text="Business Simulator" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Gill Sans Ultra Bold Condensed" size="18.0" />
+            <Font name="Big Caslon Medium" size="24.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <RadialGradient centerX="0.11797752808988764" centerY="0.9375" radius="0.5">
                <stops>
                   <Stop color="BLACK" />
-                  <Stop color="#ff0909" offset="1.0" />
+                  <Stop color="#ab1414" offset="1.0" />
                </stops>
             </RadialGradient>
          </textFill>
@@ -253,17 +251,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </DialogPane>
-      <Label fx:id="lblcredibilprc" layoutX="454.0" layoutY="90.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" wrapText="true">
+      <Label fx:id="lblcredibilprc" layoutX="454.0" layoutY="90.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" visible="false" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblfinprc" layoutX="454.0" layoutY="115.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" wrapText="true">
+      <Label fx:id="lblfinprc" layoutX="454.0" layoutY="115.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" visible="false" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblmotivprc" layoutX="454.0" layoutY="141.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" wrapText="true">
+      <Label fx:id="lblmotivprc" layoutX="454.0" layoutY="141.0" prefHeight="26.0" prefWidth="28.0" textAlignment="RIGHT" visible="false" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

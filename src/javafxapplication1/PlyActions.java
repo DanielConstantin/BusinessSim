@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 
 /**
  *
- * @author 
+ * @author Osamu
  */
 public class PlyActions {
     private int ncrt;

@@ -45,7 +45,7 @@ import javafx.stage.Stage;
 import javafxapplication1.ActionHandling;
 /**
  *
- * @author 
+ * @author Osamu
  */
 public class Scene2Controller implements Initializable {
     private static Player ply;
@@ -270,8 +270,8 @@ public class Scene2Controller implements Initializable {
               ply = CurrentPlayer.ply;
              lbl.setDisable(true);
          }else{
-             alertReject.setHeaderText("Insuficient Fonds!!!");     
-             alertReject.setContentText("You don't have enought money to implement this action!");
+             alertReject.setHeaderText("Insuficient Funds!!!");     
+             alertReject.setContentText("You don't have enough money to implement this action!");
              Optional<ButtonType> optionR = alertReject.showAndWait();
              if (optionR.get() == null) {
                 } else if (optionR.get() == ButtonType.CANCEL) {
@@ -378,6 +378,7 @@ public class Scene2Controller implements Initializable {
         dialogAccept = dialogAlert.getDialogPane();
         dialogAccept.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
         dialogAccept.autosize();
+        dialogAccept.setPrefSize(300, 250);
         dialogEvent = alertEvent.getDialogPane();
         dialogEvent.getStylesheets().add(getClass().getResource("resources/Alert.css").toExternalForm());
         dialogEvent.autosize();

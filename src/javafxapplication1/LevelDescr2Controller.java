@@ -29,7 +29,7 @@ import static javafxapplication1.CurrentPlayer.ply;
 /**
  * FXML Controller class
  *
- * @author daniel.constantin
+ * @author Osamu
  */
 public class LevelDescr2Controller implements Initializable {
    Player Ply;

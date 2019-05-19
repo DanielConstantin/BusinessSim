@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author daniel.constantin
+ * @author Osamu
  */
 public class GameOverController implements Initializable {
 

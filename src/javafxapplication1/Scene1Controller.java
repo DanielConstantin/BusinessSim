@@ -38,7 +38,7 @@ import static javafxapplication1.CurrentPlayer.istoricF;
 
 /**
  *
- * @author 
+ * @author Osamu
  */
 public class Scene1Controller implements Initializable {
 
